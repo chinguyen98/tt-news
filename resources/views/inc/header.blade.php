@@ -4,54 +4,17 @@
         <div class="topbar">
             <div class="content-topbar container h-100">
                 <div class="left-topbar">
-                    <span class="left-topbar-item flex-wr-s-c">
-                        <span>
-                            New York, NY
-                        </span>
-
-                        <img class="m-b-1 m-rl-8" src="images/icons/icon-night.png" alt="IMG">
-
-                        <span>
-                            HI 58° LO 56°
-                        </span>
-                    </span>
-
                     <a href="#" class="left-topbar-item">
-                        About
-                    </a>
-
-                    <a href="#" class="left-topbar-item">
-                        Contact
-                    </a>
-
-                    <a href="#" class="left-topbar-item">
-                        Sing up
-                    </a>
-
-                    <a href="#" class="left-topbar-item">
-                        Log in
+                        Về chúng tôi
                     </a>
                 </div>
 
                 <div class="right-topbar">
-                    <a href="#">
-                        <span class="fab fa-facebook-f"></span>
+                    <a href="https://www.facebook.com/groups/506105220057506/">
+                        <span class="fab fa-facebook"></span>
                     </a>
-
-                    <a href="#">
-                        <span class="fab fa-twitter"></span>
-                    </a>
-
-                    <a href="#">
-                        <span class="fab fa-pinterest-p"></span>
-                    </a>
-
-                    <a href="#">
-                        <span class="fab fa-vimeo-v"></span>
-                    </a>
-
-                    <a href="#">
-                        <span class="fab fa-youtube"></span>
+                    <a href="https://github.com/chinguyen98/tt-news">
+                        <span class="fab fa-github"></span>
                     </a>
                 </div>
             </div>
@@ -197,9 +160,9 @@
             </div>
 
             <!-- Banner -->
-            <div class="banner-header">
+            <!-- <div class="banner-header">
                 <a href="#"><img src="images/banner-01.jpg" alt="IMG"></a>
-            </div>
+            </div> -->
         </div>
 
         <!--  -->
