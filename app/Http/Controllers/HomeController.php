@@ -19,8 +19,10 @@ class HomeController extends Controller
             $listLastestNew[] = $result[0];
         }
 
-        $trendingList = DB::table('tin')->where('Tinhot', 1)->orderBy('Ngaydangtin')->limit(5)->get(['Tieude']);
+        $trendingList = DB::table('tin')->where('Tinhot', 1)->orderBy('Ngaydangtin')->limit(5)->get(['Tieude', 'Hinhdaidien', 'Ngaydangtin']);
 
-        return view('home')->with(['title' => 'Trang chủ', 'listnhomtin' => $listnhomtin, 'listLastestNew' => $listLastestNew, 'trendingList' => $trendingList]);
+        $latestNewsList = DB::table('tin')->orderBy('Ngaydangtin')->limit(6)->get(['Tieude', 'Tacgia', 'Hinhdaidien', 'Ngaydangtin']);
+
+        return view('home')->with(['title' => 'Trang chủ', 'listnhomtin' => $listnhomtin, 'listLastestNew' => $listLastestNew, 'trendingList' => $trendingList, 'latestNewsList' => $latestNewsList]);
     }
 }
