@@ -230,31 +230,3 @@
         </div>
     </div>
 </header>
-
-<!--
-                                        <div class="row">
-                                            @foreach($loaitin->listTin as $tin)
-                                            <div class="col-3">
-													<div>
-														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-															<img src="images/{{$tin->Hinhdaidien}}" alt="IMG">
-														</a>
-
-														<div class="p-t-10">
-															<h5 class="p-b-5">
-																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-																	{{$tin->Tieude}}
-																</a>
-															</h5>
-
-															<span class="cl8">
-																<span class="f1-s-3">
-																	Feb 18
-																</span>
-															</span>
-														</div>
-													</div>
-												</div>
-                                            @endforeach
-                                        </div>
-                                        -->
