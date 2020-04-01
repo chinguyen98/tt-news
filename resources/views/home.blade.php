@@ -8,15 +8,14 @@
         <div class="row m-rl--1">
             <div class="col-md-6 p-rl-1 p-b-2">
                 <div class="bg-img1 size-a-3 how1 pos-relative" style="background-image: url(images/{{$listLastestNew[0]->Hinhdaidien}});">
-                    <a href="blog-detail-01.html" class="dis-block how1-child1 trans-03"></a>
-
+                    <a href="/tin/{{$listLastestNew[0]->Id_tin}}" class="dis-block how1-child1 trans-03"></a>
                     <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
-                        <a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+                        <a href="/nhomtin/{{$listLastestNew[0]->Id_nhomtin}}" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
                             {{$listLastestNew[0]->tenNhomTin}}
                         </a>
 
                         <h3 class="how1-child2 m-t-14 m-b-10">
-                            <a href="blog-detail-01.html" class="how-txt1 size-a-6 f1-l-1 cl0 hov-cl10 trans-03">
+                            <a href="/tin/{{$listLastestNew[0]->Id_tin}}" class="how-txt1 size-a-6 f1-l-1 cl0 hov-cl10 trans-03">
                                 {{$listLastestNew[0]->Tieude}}
                             </a>
                         </h3>
@@ -42,15 +41,15 @@
                 <div class="row m-rl--1">
                     <div class="col-12 p-rl-1 p-b-2">
                         <div class="bg-img1 size-a-4 how1 pos-relative" style="background-image: url(images/{{$listLastestNew[1]->Hinhdaidien}});">
-                            <a href="blog-detail-01.html" class="dis-block how1-child1 trans-03"></a>
+                            <a href="/tin/{{$listLastestNew[1]->Id_tin}}" class="dis-block how1-child1 trans-03"></a>
 
                             <div class="flex-col-e-s s-full p-rl-25 p-tb-24">
-                                <a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+                                <a href="/nhomtin/{{$listLastestNew[1]->Id_nhomtin}}" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
                                     {{$listLastestNew[1]->tenNhomTin}}
                                 </a>
 
                                 <h3 class="how1-child2 m-t-14">
-                                    <a href="blog-detail-01.html" class="how-txt1 size-a-7 f1-l-2 cl0 hov-cl10 trans-03">
+                                    <a href="/tin/{{$listLastestNew[1]->Id_tin}}" class="how-txt1 size-a-7 f1-l-2 cl0 hov-cl10 trans-03">
                                         {{$listLastestNew[1]->Tieude}}
                                     </a>
                                 </h3>
@@ -60,15 +59,15 @@
 
                     <div class="col-sm-6 p-rl-1 p-b-2">
                         <div class="bg-img1 size-a-5 how1 pos-relative" style="background-image: url(images/{{$listLastestNew[2]->Hinhdaidien}});">
-                            <a href="blog-detail-01.html" class="dis-block how1-child1 trans-03"></a>
+                            <a href="/tin/{{$listLastestNew[2]->Id_tin}}" class="dis-block how1-child1 trans-03"></a>
 
                             <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
-                                <a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+                                <a href="/nhomtin/{{$listLastestNew[2]->Id_nhomtin}}" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
                                     {{$listLastestNew[2]->tenNhomTin}}
                                 </a>
 
                                 <h3 class="how1-child2 m-t-14">
-                                    <a href="blog-detail-01.html" class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
+                                    <a href="/tin/{{$listLastestNew[0]->Id_tin}}" class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
                                         {{$listLastestNew[2]->Tieude}}
                                     </a>
                                 </h3>
@@ -78,15 +77,15 @@
 
                     <div class="col-sm-6 p-rl-1 p-b-2">
                         <div class="bg-img1 size-a-5 how1 pos-relative" style="background-image: url(images/{{$listLastestNew[3]->Hinhdaidien}});">
-                            <a href="blog-detail-01.html" class="dis-block how1-child1 trans-03"></a>
+                            <a href="/tin/{{$listLastestNew[3]->Id_tin}}" class="dis-block how1-child1 trans-03"></a>
 
                             <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
-                                <a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+                                <a href="/nhomtin/{{$listLastestNew[3]->Id_nhomtin}}" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
                                     {{$listLastestNew[3]->tenNhomTin}}
                                 </a>
 
                                 <h3 class="how1-child2 m-t-14">
-                                    <a href="blog-detail-01.html" class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
+                                    <a href="/tin/{{$listLastestNew[3]->Id_tin}}" class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
                                         {{$listLastestNew[3]->Tieude}}
                                     </a>
                                 </h3>
@@ -142,13 +141,13 @@
                                         <div class="col-sm-6 p-r-25 p-r-15-sr991">
                                             <!-- Item post -->
                                             <div class="m-b-30">
-                                                <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+                                                <a href="/tin/{{$loaitin->listTin[0]->Id_tin}}" class="wrap-pic-w hov1 trans-03">
                                                     <img src="images/{{$loaitin->listTin[0]->Hinhdaidien}}" alt="IMG">
                                                 </a>
 
                                                 <div class="p-t-20">
                                                     <h5 class="p-b-5">
-                                                        <a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
+                                                        <a href="/tin/{{$loaitin->listTin[0]->Id_tin}}" class="f1-m-3 cl2 hov-cl10 trans-03">
                                                             {{$loaitin->listTin[0]->Tieude}}
                                                         </a>
                                                     </h5>
@@ -181,12 +180,12 @@
                                             @else
 
                                             <div class="flex-wr-sb-s m-b-30">
-                                                <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
+                                                <a href="/tin/{{$loaitin->listTin[0]->Id_tin}}" class="size-w-1 wrap-pic-w hov1 trans-03">
                                                     <img src="images/{{$tin->Hinhdaidien}}" alt="IMG">
                                                 </a>
                                                 <div class="size-w-2">
                                                     <h5 class="p-b-5">
-                                                        <a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                                        <a href="/tin/{{$loaitin->listTin[0]->Id_tin}}" class="f1-s-5 cl3 hov-cl10 trans-03">
                                                             {{
                                                                 strlen($tin->Tieude)>52 ?  mb_strimwidth($tin->Tieude, 0, 52, '...') :  $tin->Tieude
                                                             }}
@@ -242,7 +241,7 @@
                                         {{$loop->index+1}}
                                     </div>
 
-                                    <a href="#" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+                                    <a href="/tin/{{$news->Id_tin}}" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
                                         {{$news->Tieude}}
                                     </a>
                                 </li>
@@ -346,13 +345,13 @@
                     <div class="col-sm-6 p-r-25 p-r-15-sr991">
                         <!-- Item latest -->
                         <div class="m-b-45">
-                            <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+                            <a href="/tin/{{$tin->Id_tin}}" class="wrap-pic-w hov1 trans-03">
                                 <img src="images/{{$tin->Hinhdaidien}}" alt="IMG">
                             </a>
 
                             <div class="p-t-16">
                                 <h5 class="p-b-5">
-                                    <a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
+                                    <a href="/tin/{{$tin->Id_tin}}" class="f1-m-3 cl2 hov-cl10 trans-03">
                                         {{$tin->Tieude}}
                                     </a>
                                 </h5>

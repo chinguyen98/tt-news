@@ -58,13 +58,13 @@
 						@else
 
 						<li class="flex-wr-sb-s p-b-20">
-							<a href="#" class="size-w-4 wrap-pic-w hov1 trans-03">
+							<a href="/tin/{{$tin->Id_tin}}" class="size-w-4 wrap-pic-w hov1 trans-03">
 								<img src="images/{{$tin->Hinhdaidien}}" alt="IMG">
 							</a>
 
 							<div class="size-w-5">
 								<h6 class="p-b-5">
-									<a href="#" class="f1-s-5 cl11 hov-cl10 trans-03">
+									<a href="/tin/{{$tin->Id_tin}}" class="f1-s-5 cl11 hov-cl10 trans-03">
 										{{$tin->Tieude}}
 									</a>
 								</h6>
@@ -92,7 +92,7 @@
 						@foreach($listnhomtin as $nhomtin)
 
 						<li class="how-bor1 p-rl-5 p-tb-10">
-							<a href="#" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
+							<a href="/nhomtin/{{$nhomtin->Id_nhomtin}}" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
 								{{$nhomtin->Ten_nhomtin}} ({{count($nhomtin->listLoaitin)}})
 							</a>
 						</li>

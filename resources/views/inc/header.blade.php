@@ -156,7 +156,7 @@
         <div class="wrap-logo container">
             <!-- Logo desktop -->
             <div class="logo">
-                <a href="index.html"><img src="images/icons/logo-01.png" alt="LOGO"></a>
+                <a href="/"><img src="images/icons/logo-01.png" alt="LOGO"></a>
             </div>
         </div>
 
@@ -165,7 +165,7 @@
             <div class="main-nav">
                 <!-- Menu desktop -->
                 <nav class="menu-desktop">
-                    <a class="logo-stick" href="index.html">
+                    <a class="logo-stick" href="/">
                         <img src="images/icons/logo-01.png" alt="LOGO">
                     </a>
 
@@ -197,13 +197,13 @@
 
                                                 <div class="col-3">
                                                     <div>
-                                                        <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+                                                        <a href="/tin/{{$tin->Id_tin}}" class="wrap-pic-w hov1 trans-03">
                                                             <img src="images/{{$tin->Hinhdaidien}}" alt="IMG">
                                                         </a>
 
                                                         <div class="p-t-10">
                                                             <h5 class="p-b-5">
-                                                                <a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                                                <a href="/tin/{{$tin->Id_tin}}" class="f1-s-5 cl3 hov-cl10 trans-03">
                                                                     {{$tin->Tieude}}
                                                                 </a>
                                                             </h5>
