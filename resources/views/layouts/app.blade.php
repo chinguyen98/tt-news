@@ -3,6 +3,7 @@
 
 <head>
     <title>{{$title ?? 'TT NEWS'}}</title>
+    <base href="{{asset('')}}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->

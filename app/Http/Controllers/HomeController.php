@@ -25,4 +25,14 @@ class HomeController extends Controller
 
         return view('home')->with(['title' => 'Trang chủ', 'listnhomtin' => $listnhomtin, 'listLastestNew' => $listLastestNew, 'trendingList' => $trendingList, 'latestNewsList' => $latestNewsList]);
     }
+
+    public function renderNhomTin($id)
+    {
+        $listnhomtin = Nhomtin::all();
+        $trendingList = DB::table('tin')->where('Tinhot', 1)->orderBy('Ngaydangtin')->limit(5)->get(['Tieude', 'Hinhdaidien', 'Ngaydangtin']);
+
+        $nhomtin = Nhomtin::find($id);
+
+        return view('nhomtin')->with(['title' => $nhomtin->Ten_nhomtin, 'nhomtin' => $nhomtin, 'listnhomtin' => $listnhomtin, 'trendingList' => $trendingList]);
+    }
 }

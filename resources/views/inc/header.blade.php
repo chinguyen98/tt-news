@@ -172,7 +172,7 @@
                     <ul class="main-menu">
                         @foreach($listnhomtin as $nhomtin)
                         <li class="mega-menu-item">
-                            <a href="category-01.html">{{$nhomtin->Ten_nhomtin}}</a>
+                            <a href="/nhomtin/{{$nhomtin->Id_nhomtin}}">{{$nhomtin->Ten_nhomtin}}</a>
                             <div class="sub-mega-menu">
                                 <div class="nav flex-column nav-pills" role="tablist">
                                     @foreach($nhomtin->listLoaiTin as $loaitin)
