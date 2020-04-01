@@ -170,6 +170,9 @@
                     </a>
 
                     <ul class="main-menu">
+                        <li class="mega-menu-item">
+                            <a href="/">Trang chủ</a>
+                        </li>
                         @foreach($listnhomtin as $nhomtin)
                         <li class="mega-menu-item">
                             <a href="/nhomtin/{{$nhomtin->Id_nhomtin}}">{{$nhomtin->Ten_nhomtin}}</a>

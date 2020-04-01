@@ -1082,20 +1082,6 @@ body {padding-right: 0px !important;}
   display: flex;
 }
 
-.breadcrumb-item+.breadcrumb-item::before {
-  height: 100%;
-  content: "\f105";
-  font-family: FontAwesome;
-  font-size: 12px;
-  padding-right: 10px;
-  padding-left: 12px;
-  color: #999;
-}
-
-a.breadcrumb-item:hover {
-  color: #17b978;
-}
-
 /*//////////////////////////////////////////////////////////////////
 [ Pagination ]*/
 .pagi-item {

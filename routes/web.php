@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/nhomtin/{id}', 'HomeController@renderNhomTin')->name('nhomtin');
+Route::get('/nhomtin/{id}', 'HomeController@renderNhomTin')->name('user.nhomtin');
 
-Route::get('/loaitin/{id}', 'HomeController@renderLoaiTin')->name('loaitin');
+Route::get('/loaitin/{id}', 'HomeController@renderLoaiTin')->name('user.loaitin');
+
+Route::get('/tin/{id}', 'HomeController@renderTin')->name('user.tin');

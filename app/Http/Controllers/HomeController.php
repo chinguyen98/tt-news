@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Loaitin;
 use App\Nhomtin;
+use App\Tin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -46,5 +47,15 @@ class HomeController extends Controller
         $loaitin = Loaitin::find($id);
 
         return view('loaitin')->with(['title' => $loaitin->Ten_loaitin, 'loaitin' => $loaitin, 'listnhomtin' => $listnhomtin, 'trendingList' => $trendingList]);
+    }
+
+    public function renderTin($id)
+    {
+        $listnhomtin = Nhomtin::all();
+        $trendingList = DB::table('tin')->where('Tinhot', 1)->orderBy('Ngaydangtin')->limit(5)->get(['Id_tin', 'Tieude', 'Hinhdaidien', 'Ngaydangtin']);
+
+        $tin = Tin::find($id);
+
+        return view('tin')->with(['title' => $tin->Tieude, 'listnhomtin' => $listnhomtin, 'trendingList' => $trendingList, 'tin' => $tin]);
     }
 }

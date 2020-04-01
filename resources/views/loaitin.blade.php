@@ -2,6 +2,32 @@
 
 @section('content')
 
+<!-- Breadcrumb -->
+<div class="container">
+    <div class="headline bg0 flex-wr-sb-c p-rl-20 p-tb-8">
+        <div class="f2-s-1 p-r-30 m-tb-6">
+            <a href="/" class="breadcrumb-item f1-s-3 cl9">
+                Trang chủ
+            </a>
+
+            <a href="/nhomtin/{{$loaitin->nhomtin->Id_nhomtin}}" class="breadcrumb-item f1-s-3 cl9">
+                {{$loaitin->nhomtin->Ten_nhomtin}}
+            </a>
+
+            <span class="breadcrumb-item f1-s-3 cl9">
+                {{$loaitin->Ten_loaitin}}
+            </span>
+        </div>
+
+        <div class="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6">
+            <input class="f1-s-1 cl6 plh9 s-full p-l-25 p-r-45" type="text" name="search" placeholder="Search">
+            <button class="flex-c-c size-a-1 ab-t-r fs-20 cl2 hov-cl10 trans-03">
+                <i class="zmdi zmdi-search"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
 <!-- Page heading -->
 <div class="container p-t-4 p-b-40">
     <h2 class="f1-l-1 cl2">
