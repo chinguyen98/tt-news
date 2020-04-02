@@ -40,115 +40,35 @@
             <ul class="topbar-mobile">
                 <li class="left-topbar">
                     <span class="left-topbar-item flex-wr-s-c">
-                        <span>
-                            New York, NY
-                        </span>
-
-                        <img class="m-b-1 m-rl-8" src="images/icons/icon-night.png" alt="IMG">
-
-                        <span>
-                            HI 58° LO 56°
-                        </span>
+                        <a href="#" class="left-topbar-item">
+                            Về chúng tôi
+                        </a>
                     </span>
                 </li>
 
-                <li class="left-topbar">
-                    <a href="#" class="left-topbar-item">
-                        About
-                    </a>
-
-                    <a href="#" class="left-topbar-item">
-                        Contact
-                    </a>
-
-                    <a href="#" class="left-topbar-item">
-                        Sing up
-                    </a>
-
-                    <a href="#" class="left-topbar-item">
-                        Log in
-                    </a>
-                </li>
 
                 <li class="right-topbar">
-                    <a href="#">
-                        <span class="fab fa-facebook-f"></span>
+                    <a href="https://www.facebook.com/groups/506105220057506/">
+                        <span class="fab fa-facebook"></span>
                     </a>
-
-                    <a href="#">
-                        <span class="fab fa-twitter"></span>
-                    </a>
-
-                    <a href="#">
-                        <span class="fab fa-pinterest-p"></span>
-                    </a>
-
-                    <a href="#">
-                        <span class="fab fa-vimeo-v"></span>
-                    </a>
-
-                    <a href="#">
-                        <span class="fab fa-youtube"></span>
+                    <a href="https://github.com/chinguyen98/tt-news">
+                        <span class="fab fa-github"></span>
                     </a>
                 </li>
             </ul>
 
             <ul class="main-menu-m">
                 <li>
-                    <a href="index.html">Home</a>
-                    <ul class="sub-menu-m">
-                        <li><a href="index.html">Homepage v1</a></li>
-                        <li><a href="home-02.html">Homepage v2</a></li>
-                        <li><a href="home-03.html">Homepage v3</a></li>
-                    </ul>
-
-                    <span class="arrow-main-menu-m">
-                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                    </span>
+                    <a href="/">Trang chủ</a>
                 </li>
+
+                @foreach($listnhomtin as $nhomtin)
 
                 <li>
-                    <a href="category-01.html">News</a>
+                    <a href="/nhomtin/{{$nhomtin->Id_nhomtin}}">{{$nhomtin->Ten_nhomtin}}</a>
                 </li>
 
-                <li>
-                    <a href="category-02.html">Entertainment </a>
-                </li>
-
-                <li>
-                    <a href="category-01.html">Business</a>
-                </li>
-
-                <li>
-                    <a href="category-02.html">Travel</a>
-                </li>
-
-                <li>
-                    <a href="category-01.html">Life Style</a>
-                </li>
-
-                <li>
-                    <a href="category-02.html">Video</a>
-                </li>
-
-                <li>
-                    <a href="#">Features</a>
-                    <ul class="sub-menu-m">
-                        <li><a href="category-01.html">Category Page v1</a></li>
-                        <li><a href="category-02.html">Category Page v2</a></li>
-                        <li><a href="blog-grid.html">Blog Grid Sidebar</a></li>
-                        <li><a href="blog-list-01.html">Blog List Sidebar v1</a></li>
-                        <li><a href="blog-list-02.html">Blog List Sidebar v2</a></li>
-                        <li><a href="blog-detail-01.html">Blog Detail Sidebar</a></li>
-                        <li><a href="blog-detail-02.html">Blog Detail No Sidebar</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-
-                    <span class="arrow-main-menu-m">
-                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                    </span>
-                </li>
+                @endforeach
             </ul>
         </div>
 

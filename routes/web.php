@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,11 @@ Route::get('/nhomtin/{id}', 'HomeController@renderNhomTin')->name('user.nhomtin'
 Route::get('/loaitin/{id}', 'HomeController@renderLoaiTin')->name('user.loaitin');
 
 Route::get('/tin/{id}', 'HomeController@renderTin')->name('user.tin');
+
+/* Admin Routes */
+
+Auth::routes();
+
+Route::get('/admin/home', 'Admin\HomeController@index')->name('admin.home');
+
+
