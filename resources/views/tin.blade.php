@@ -36,13 +36,99 @@
 <section class="bg0 p-b-140 p-t-10">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-10 col-lg-8 p-b-30">
+            <div class="col-md-12 col-lg-12 p-b-30">
                 <div class="p-r-10 p-r-0-sr991">
                     <!-- Blog Detail -->
                     <div class="p-b-70">
                         <a href="#" class="f1-s-10 cl2 hov-cl10 trans-03 text-uppercase">
                             {{$tin->loaitin->Ten_loaitin}}
                         </a>
+                        <h3 class="f1-l-3 cl2 p-b-16 p-t-33 respon2">
+                            {{$tin->Tieude}}
+                        </h3>
+                        <div class="flex-wr-s-s p-b-40">
+                            <span class="f1-s-3 cl8 m-r-15">
+                                <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+                                    by {{$tin->Tacgia}}
+                                </a>
+
+                                <span class="m-rl-3">-</span>
+
+                                <span>
+                                    {{$tin->Ngaydangtin}}
+                                </span>
+                            </span>
+
+                            <span class="f1-s-3 cl8 m-r-15">
+                                {{$tin->Solanxem}} lượt xem
+                            </span>
+
+                            <a href="#" class="f1-s-3 cl8 hov-cl10 trans-03 m-r-15">
+                                0 Comment
+                            </a>
+                        </div>
+
+                        <div class="wrap-pic-max-w p-b-30">
+                            <img src="images/{{$tin->Hinhdaidien}}" alt="IMG">
+                        </div>
+
+                        <div style="text-align: justify">
+                            {!! $tin->Noidung !!}
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col col-sm-12 col-md-8">
+                                <!-- Leave a comment -->
+                                <h4 class="f1-l-4 cl3 p-b-12">
+                                    Bình luận:
+                                </h4>
+
+                                <p class="f1-s-13 cl8 p-b-40">
+                                    Vui lòng kèm địa chỉ email (Địa chỉ email của bạn sẽ không công khai)!
+                                </p>
+
+                                <form>
+                                    <textarea class="bo-1-rad-3 bocl13 size-a-15 f1-s-13 cl5 plh6 p-rl-18 p-tb-14 m-b-20" name="msg" placeholder="Bình luận..."></textarea>
+
+                                    <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="name" placeholder="Tên">
+
+                                    <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="email" placeholder="abc@gmail.com">
+
+                                    <button class="size-a-17 bg2 borad-3 f1-s-12 cl0 hov-btn1 trans-03 p-rl-15 m-t-10">
+                                        Bình luận
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="col col-sm-12 col-md-4">
+                                <div class="size-h-3 flex-s-c">
+                                    <h5 class="f1-m-7 cl0 text-danger">
+                                        Bài viết liên quan
+                                    </h5>
+                                </div>
+                                <ul>
+                                    @foreach($relatedPosts as $tin)
+
+                                    <li class="flex-wr-sb-s p-b-20">
+                                        <a href="/tin/{{$tin->Id_tin}}" class="size-w-4 wrap-pic-w hov1 trans-03">
+                                            <img src="images/{{$tin->Hinhdaidien}}" alt="IMG">
+                                        </a>
+
+                                        <div class="size-w-5">
+                                            <h6 class="p-b-5">
+                                                <a href="/tin/{{$tin->Id_tin}}" class="f1-s-5 cl11 hov-cl10 trans-03">
+                                                    {{$tin->Tieude}}
+                                                </a>
+                                            </h6>
+
+                                            <span class="f1-s-3 cl6">
+                                                {{$tin->Ngaydangtin}}
+                                            </span>
+                                        </div>
+                                    </li>
+
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -54,8 +54,12 @@ class HomeController extends Controller
         $listnhomtin = Nhomtin::all();
         $trendingList = DB::table('tin')->where('Tinhot', 1)->orderBy('Ngaydangtin')->limit(5)->get(['Id_tin', 'Tieude', 'Hinhdaidien', 'Ngaydangtin']);
 
+
+
         $tin = Tin::find($id);
 
-        return view('tin')->with(['title' => $tin->Tieude, 'listnhomtin' => $listnhomtin, 'trendingList' => $trendingList, 'tin' => $tin]);
+        $relatedPosts = DB::table('tin')->where('Id_loaitin', $tin->Id_loaitin)->orderByDesc('Ngaydangtin')->limit(3)->get(['Id_tin', 'Hinhdaidien', 'Tieude', 'Ngaydangtin']);
+
+        return view('tin')->with(['title' => $tin->Tieude, 'listnhomtin' => $listnhomtin, 'trendingList' => $trendingList, 'tin' => $tin, 'relatedPosts' => $relatedPosts]);
     }
 }
