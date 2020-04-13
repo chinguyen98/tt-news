@@ -28,4 +28,42 @@ Auth::routes();
 
 Route::get('/admin/home', 'Admin\HomeController@index')->name('admin.home');
 
-
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('home', 'Admin\HomeController@index')->name('admin.home');
+    Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+    //nhom tin
+    Route::group(['prefix' => 'nhomtin'], function () {
+        Route::get('dsnhomtin', 'Admin\nhomtinController@dsnhomtin');
+        Route::get('suanhomtin/{id}', 'Admin\nhomtinController@suanhomtin');
+        Route::post('laydulieusua/{id}', 'Admin\nhomtinController@laydulieusua');
+        Route::get('xoanhomtin/{id}', 'Admin\nhomtinController@xoanhomtin');
+        Route::get('themnhomtin', 'Admin\nhomtinController@themnhomtin');
+        Route::post('laydulieuthem', 'Admin\nhomtinController@laydulieuthem');
+        Route::post('ketquatimkiem', 'Admin\nhomtinController@ketquatimkiem');
+    });
+    //loaitin
+    Route::group(['prefix' => 'loaitin'], function () {
+        Route::get('dsloaitin', 'Admin\loaitinController@dsloaitin');
+        Route::get('sualoaitin/{id}', 'Admin\loaitinController@sualoaitin');
+        Route::post('laydulieusua/{id}', 'Admin\loaitinController@laydulieusua');
+        Route::get('xoaloaitin/{id}', 'Admin\loaitinController@xoaloaitin');
+        Route::get('themloaitin', 'Admin\loaitinController@themloaitin');
+        Route::post('laydulieuthem', 'Admin\loaitinController@laydulieuthem');
+        Route::post('ketquatimkiem', 'Admin\loaitinController@ketquatimkiem');
+    });
+    //tin
+    Route::group(['prefix' => 'tin'], function () {
+        Route::get('dstin', 'Admin\tinController@dstin');
+        Route::get('themtin', 'Admin\tinController@themtin');
+        Route::post('laydulieuthem', 'Admin\tinController@laydulieuthem');
+        Route::get('chitiettin/{id}', 'Admin\tinController@chitiettin');
+        Route::post('ketquatimkiem', 'Admin\tinController@ketquatimkiem');
+        Route::get('xoatin/{id}/{idl}', 'Admin\tinController@xoatin');
+        Route::get('suatin/{id}', 'Admin\tinController@suatin');
+        Route::post('laydulieusua/{id}', 'Admin\tinController@laydulieusua');
+    });
+    //binhluan
+    Route::group(['prefix' => 'binhluan'], function () {
+        Route::get('binhluan', 'Admin\binhluanController@binhluan');
+    });
+});
