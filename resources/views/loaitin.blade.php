@@ -77,7 +77,7 @@
                                 </p>
 
                                 <a href="/tin/{{$tin->Id_tin}}" class="f1-s-1 cl9 hov-cl10 trans-03">
-                                    Read More
+                                    Đọc thêm
                                     <i class="m-l-2 fa fa-long-arrow-alt-right"></i>
                                 </a>
                             </div>

@@ -49,7 +49,7 @@
                         <div class="flex-wr-s-s p-b-40">
                             <span class="f1-s-3 cl8 m-r-15">
                                 <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-                                    by {{$tin->Tacgia}}
+                                    bởi {{$tin->Tacgia}}
                                 </a>
 
                                 <span class="m-rl-3">-</span>
@@ -64,7 +64,7 @@
                             </span>
 
                             <a href="#" class="f1-s-3 cl8 hov-cl10 trans-03 m-r-15">
-                                0 Comment
+                                0 bình luận
                             </a>
                         </div>
 

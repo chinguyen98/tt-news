@@ -10,12 +10,12 @@
 					</div>
 
 					<div>
-						<p class="f1-s-1 cl11 p-b-16">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tempor magna eget elit efficitur, at accumsan sem placerat. Nulla tellus libero, mattis nec molestie at, facilisis ut turpis. Vestibulum dolor metus, tincidunt eget odio
+						<p class="f1-s-1 cl11 p-b-16" style="text-align: justify">
+							Website tt-news là giải pháp tốt để đạt được các mục tiêu trên. Độc giả có thể vào xem các thông tin mới theo các chuyên mục, phản hồi ý kiến của mình ngay khi xem hoặc có thể tìm kiếm các nội dung cũ theo nhiều tiêu chí: nội dung, loại danh mục, ngày đăng, tác giả, …
 						</p>
 
 						<p class="f1-s-1 cl11 p-b-16">
-							Any questions? Call us on (+1) 96 716 6879
+							Liên hệ (+1) 96 716 6879
 						</p>
 
 						<div class="p-t-15">
@@ -101,21 +101,6 @@
 					</ul>
 				</div>
 			</div>
-		</div>
-	</div>
-
-	<div class="bg11">
-		<div class="container size-h-4 flex-c-c p-tb-15">
-			<span class="f1-s-1 cl0 txt-center">
-				Copyright © 2018
-
-				<a href="#" class="f1-s-1 cl10 hov-link1">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright &copy;<script>
-						document.write(new Date().getFullYear());
-					</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-			</span>
 		</div>
 	</div>
 </footer>
