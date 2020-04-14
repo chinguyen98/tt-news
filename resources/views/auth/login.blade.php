@@ -12,18 +12,19 @@
             <form id="sign_in" method="POST" action="/login">
                 @csrf
                 <div class="msg">Mời bạn đăng nhập</div>
+                 @error('email')
+                    <span class="invalid-feedback text-danger" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                 <div class="input-group">
                     <span class="input-group-addon">
                         <i class="material-icons">person</i>
                     </span>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="email" placeholder="Email" required autofocus value="">
+                        <input type="text" class="form-control" name="email" placeholder="Email" required autofocus value="{{old('email')}}">
                     </div>
-                    @error('email')
-                    <span class="invalid-feedback text-danger" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
+                   
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">
@@ -39,19 +40,23 @@
                     @enderror
                 </div>
                 <div class="row">
-                    <div class="col-xs-8 p-t-5">
+                    <div class="col-xs-4 p-t-5">
                         <input type="checkbox" name="rememberme" id="rememberme" class="filled-in chk-col-pink">
                         <label for="rememberme">Ghi nhớ</label>
                     </div>
-                    <div class="col-xs-4">
+                    <div class="col-xs-8">
                         <button class="btn btn-block bg-pink waves-effect" type="submit">Đăng Nhập</button>
                     </div>
                 </div>
                 <div class="row m-t-15 m-b--20">
 
-                    <div class="col-xs-12 align-right">
-                        <a href="forgot-password.html">Quên mật khẩu?</a>
+                    <div class="col-xs-6 align-right">
+                        <a href="forgot-password.html">Quên mật khẩu</a>
                     </div>
+                     <div class="col-xs-6 align-left">
+                        <a href="/register">Đăng Ký</a>
+                    </div>
+
                 </div>
             </form>
         </div>

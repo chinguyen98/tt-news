@@ -34,7 +34,7 @@
                     </div>
                     @error('email')
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
+                        <strong>Email đã tồn tại </strong>
                     </span>
                     @enderror
                 </div>
@@ -60,11 +60,10 @@
                     </div>
                 </div>
 
-                <div class="form-group row mb-0">
-                    <div class="col-md-6 offset-md-4">
-                        <button type="submit" class="btn btn-primary">
-                            {{ __('Register') }}
-                        </button>
+                <div class="row">
+                  
+                    <div class="col-xs-12">
+                        <button class="btn btn-block bg-pink waves-effect" type="submit">Đăng Ký</button>
                     </div>
                 </div>
             </form>
