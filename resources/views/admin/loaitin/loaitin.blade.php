@@ -19,10 +19,10 @@
                                 <table  class=" table table-bordered table-striped table-hover js-basic-example dataTable ">
                                     <thead>
                                         <tr>
-                                            <th>Id_loaitin</th>
-                                            <th>Ten_loaitin</th>
-                                            <th>Trangthai</th>
-                                            <th>Id_nhomtin</th>
+                                            <th>Id loại tin</th>
+                                            <th>Tên loại tin</th>
+                                            <th>Trạng thái</th>
+                                            <th>Id nhóm tin</th>
                                             <th>Cập nhật/Xóa</th> 
                                         </tr>
                                     </thead>

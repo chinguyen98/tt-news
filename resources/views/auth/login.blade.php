@@ -12,26 +12,26 @@
             <form id="sign_in" method="POST" action="/login">
                 @csrf
                 <div class="msg">Mời bạn đăng nhập</div>
-                 @error('email')
-                    <span class="invalid-feedback text-danger" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
+               
                 <div class="input-group">
                     <span class="input-group-addon">
                         <i class="material-icons">person</i>
                     </span>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="email" placeholder="Email" required autofocus value="{{old('email')}}">
+                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Email" value="{{old('email')}}" autocomplete="email">
                     </div>
-                   
+                    @error('email')
+                    <span class="invalid-feedback text-danger" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">
                         <i class="material-icons">lock</i>
                     </span>
                     <div class="form-line">
-                        <input type="password" class="form-control" name="password" placeholder="Password" required>
+                        <input type="password" class="form-control" name="password" placeholder="Password" >
                     </div>
                     @error('password')
                     <span class="invalid-feedback text-danger" role="alert">
@@ -41,7 +41,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-4 p-t-5">
-                        <input type="checkbox" name="rememberme" id="rememberme" class="filled-in chk-col-pink">
+                        <input type="checkbox" name="rememberme" id="rememberme"  {{ old('remember') ? 'checked' : '' }} class="filled-in chk-col-pink">
                         <label for="rememberme">Ghi nhớ</label>
                     </div>
                     <div class="col-xs-8">
@@ -50,9 +50,7 @@
                 </div>
                 <div class="row m-t-15 m-b--20">
 
-                    <div class="col-xs-6 align-right">
-                        <a href="forgot-password.html">Quên mật khẩu</a>
-                    </div>
+                    
                      <div class="col-xs-6 align-left">
                         <a href="/register">Đăng Ký</a>
                     </div>

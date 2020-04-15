@@ -8,35 +8,42 @@
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
-
                         <div class="header">
-                            @include('error.note')
                             <h2>
-                               Danh Sách Nhóm Tin
+                               Danh Sách Bình Luận
                             </h2>
+                            <ul class="header-dropdown m-r--5">
+                               
+                            </ul>
                         </div>
                         <div class="body">
                             <div class="table-responsive">
                                 <table  class=" table table-bordered table-striped table-hover js-basic-example dataTable ">
                                     <thead>
                                         <tr>
-                                            <th>Id nhóm tin</th>
-                                            <th>Tên nhóm tin</th>
-                                            <th>Trạng thái</th>
-                                            <th>Cập nhật/Xóa</th> 
+                                            <th>Id bình luận</th>
+                                            <th>email</th>
+                                            <th>Thời gian</th>
+                                            <th>Nội dung</th>
+                                            <th>Trang thái</th>
+                                            <th>Id tin</th>
+                                            <th>Duyệt/Xóa</th>  
                                         </tr>
                                     </thead>
                                     
                                     <tbody>
-                                      @foreach($group as $gr)      
-                                   
+                                            
+                                   @foreach($comment as $c)
                                         <tr>
-                                            <td>{{$gr->Id_nhomtin}}</td>
-                                            <td>{{$gr->Ten_nhomtin}}</td>
-                                            <td>{{($gr->Trangthai)==1?'Hiện':'Ẩn'}}</td>
+                                            <td>{{$c->Id_binhluan}}</td>
+                                            <td>{{$c->Email}}</td>
+                                            <td>{{$c->Thoigian}}</td>
+                                            <td>{{$c->Noidung}}</td>
+                                            <td>{{$c->Trangthai}}</td>
+                                            <td>{{$c->Id_tin}}</td>
                                             <td>
-                                            <a href="admin/nhomtin/suanhomtin/{{$gr->Id_nhomtin}}" class="btn bg-blue waves-effect">Cập Nhật</a> &nbsp;
-                                            <a href="admin/nhomtin/xoanhomtin/{{$gr->Id_nhomtin}}" class="btn bg-red waves-effect" onClick="return confirm ('Bạn có muốn xóa không')">Xoá</a>
+                                            <a href="" class="btn bg-blue waves-effect">Duyệt</a> &nbsp;
+                                            <a href="" class="btn bg-red waves-effect" onClick="return confirm ('Bạn có muốn xóa không')">Xoá</a>
                                             </td>
                                         </tr>
                                  @endforeach

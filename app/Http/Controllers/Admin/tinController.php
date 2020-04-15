@@ -22,7 +22,7 @@ class tinController extends Controller
     }
      function laydulieuthem (Request $request)
     {
-        $kiemtra=$request->validate([
+        $request->validate([
             'Ten_loaitin'=>'required',
             'Tieude'=>'required|min:10|max:255|unique:tin',
             'Hinhdaidien'=>'image|required',
@@ -32,18 +32,19 @@ class tinController extends Controller
             'Tacgia'=>'required',
         ],
         [
-            'Ten_loaitin.required'=>"Loại tin chưa được chọn",
-            'Tieude.required'=>"Tiều đề chưa nhập",
-            'Hinhdaidien.required'=>"Hình đại diện chưa có",
-            'Mota.required'=>"Mô tả chưa nhập",
-            'Noidung.required'=>"Nội dung chưa nhập",
-            'Ngaydangtin.required'=>"Ngày chưa được chọn",
-            'Tacgia.required'=>"Tác giả chưa nhập",
-            'Hinhdaidien.image'=>'File hình không hợp lệ',
-            'Tieude.unique'=>"Tiêu đề đã tồn tại",
-            'Tieude.min'=>"Tiều đề ít nhất 10 kí tự",
-            'Noidung.min'=>"Nội dung ít nhất 100 kí tự",
-            'Mota.min'=>"Mô tả ít nhất 10 kí tự",
+            'Ten_loaitin.required'=>"Thêm thất bại loại tin chưa được chọn",
+            'Tieude.required'=>"Thêm thất bại tiều đề chưa nhập",
+            'Hinhdaidien.required'=>"Thêm thất bại hình đại diện chưa có",
+            'Hinhdaidien.uploaded'=>"Thêm thất bại  đuôi hình không hợp lệ",
+            'Mota.required'=>"Thêm thất bại mô tả chưa nhập",
+            'Noidung.required'=>"Thêm thất bại nội dung chưa nhập",
+            'Ngaydangtin.required'=>"Thêm thất bại ngày chưa được chọn",
+            'Tacgia.required'=>"Thêm thất bại tác giả chưa nhập",
+            'Hinhdaidien.image'=>' Thêm thất bại File hình không hợp lệ',
+            'Tieude.unique'=>"Thêm thất bại tiêu đề đã tồn tại",
+            'Tieude.min'=>"Thêm thất bại tiều đề ít nhất 10 kí tự",
+            'Noidung.min'=>"Thêm thất bại nội dung ít nhất 100 kí tự",
+            'Mota.min'=>"Thêm thất bại mô tả ít nhất 10 kí tự",
         ]);
     $id=$request->Ten_loaitin;
     $td=$request->Tieude;
@@ -57,10 +58,11 @@ class tinController extends Controller
     if($request->hasFile('Hinhdaidien'))
     {
         $hinh=($request->file('Hinhdaidien'));
-        $name=$hinh->getClientOriginalName();   
-        $hinh->move('images',$name);
+        $name=$hinh->getClientOriginalName();
+        $ten=str::random(4)."_".$name;   
+        $hinh->move('images/',$ten);
     }
-    $data=array('Tieude'=>$td,'Hinhdaidien'=>$name,'Mota'=>$mt,'Noidung'=>$nd,'Ngaydangtin'=>$ngay,'Tacgia'=>$tg,'Solanxem'=>$slx,'Tinhot'=>$hot,'Trangthai'=>$trangthai,'Id_loaitin'=>$id);
+    $data=array('Tieude'=>$td,'Hinhdaidien'=>$ten,'Mota'=>$mt,'Noidung'=>$nd,'Ngaydangtin'=>$ngay,'Tacgia'=>$tg,'Solanxem'=>$slx,'Tinhot'=>$hot,'Trangthai'=>$trangthai,'Id_loaitin'=>$id);
     DB::table('tin')->insert($data);
     return redirect('admin/tin/dstin')->with('alert','Thêm thành công');
         
@@ -96,28 +98,28 @@ class tinController extends Controller
     }
     function laydulieusua(Request $request,$idtin)
     {
-         $kiemtra=$request->validate([
+      $request->validate([
             'Ten_loaitin'=>'required',
-            'Tieude'=>'required|min:10|max:255|unique:tin',
-            'Hinhdaidien'=>'image|required',
+            'Tieude'=>'required|min:10|max:255',
+            'Hinhdaidien'=>'image',
             'Mota'=>'required|min:10|max:255',
             'Noidung'=>'required|min:10',
             'Ngaydangtin'=>'required',
             'Tacgia'=>'required',
         ],
         [
-            'Ten_loaitin.required'=>"Loại tin chưa được chọn",
-            'Tieude.required'=>"Tiều đề chưa nhập",
-            'Hinhdaidien.required'=>"Hình đại diện chưa có",
-            'Mota.required'=>"Mô tả chưa nhập",
-            'Noidung.required'=>"Nội dung chưa nhập",
-            'Ngaydangtin.required'=>"Ngày chưa được chọn",
-            'Tacgia.required'=>"Tác giả chưa nhập",
-            'Hinhdaidien.image'=>'File hình không hợp lệ',
-            'Tieude.unique'=>"Tiêu đề đã tồn tại",
-            'Tieude.min'=>"Tiều đề ít nhất 10 kí tự",
-            'Noidung.min'=>"Nội dung ít nhất 100 kí tự",
-            'Mota.min'=>"Mô tả ít nhất 10 kí tự",
+            'Ten_loaitin.required'=>"Thêm thất bại loại tin chưa được chọn",
+            'Tieude.required'=>"Thêm thất bại tiều đề chưa nhập",
+            'Hinhdaidien.uploaded'=>"Thêm thất bại  đuôi hình không hợp lệ",
+            'Mota.required'=>"Thêm thất bại mô tả chưa nhập",
+            'Noidung.required'=>"Thêm thất bại nội dung chưa nhập",
+            'Ngaydangtin.required'=>"Thêm thất bại ngày chưa được chọn",
+            'Tacgia.required'=>"Thêm thất bại tác giả chưa nhập",
+            'Hinhdaidien.image'=>' Thêm thất bại File hình không hợp lệ',
+            'Tieude.unique'=>"Thêm thất bại tiêu đề đã tồn tại",
+            'Tieude.min'=>"Thêm thất bại tiều đề ít nhất 10 kí tự",
+            'Noidung.min'=>"Thêm thất bại nội dung ít nhất 100 kí tự",
+            'Mota.min'=>"Thêm thất bại mô tả ít nhất 10 kí tự",
         ]);
     $id=$request->Ten_loaitin;
     $td=$request->Tieude;
@@ -127,15 +129,34 @@ class tinController extends Controller
     $tg=$request->Tacgia;
     $hot=$request->Hot;
     $trangthai=$request->AnHien;
-    if($request->hasFile('Hinhdaidien'))
+    $list=DB::table('tin')->where('Tieude',$td)->Where('Id_tin','!=',$idtin)->first();
+    $image=DB::table('tin')->select('Hinhdaidien')->Where('Id_tin',$idtin)->first();
+    if($list!=null)
     {
-        $hinh=($request->file('Hinhdaidien'));
-        $name=$hinh->getClientOriginalName();   
-        $hinh->move('images',$name);
-      
+         return redirect('admin/tin/dstin')->with('error','Cập nhật thất bại tiêu đề đã có');
     }
-    $data=array('Tieude'=>$td,'Hinhdaidien'=>$name,'Mota'=>$mt,'Noidung'=>$nd,'Ngaydangtin'=>$ngay,'Tacgia'=>$tg,'Tinhot'=>$hot,'Trangthai'=>$trangthai,'Id_loaitin'=>$id);
-    DB::table('tin')->Where('Id_tin',$idtin)->update($data);
+    else 
+    {
+             if($request->hasFile('Hinhdaidien'))
+                 {
+                     $hinh=($request->file('Hinhdaidien'));
+                     $name=$hinh->getClientOriginalName(); 
+                      $ten=str::random(4)."_".$name;   
+                    unlink('images/'.$image->Hinhdaidien);  
+                    $hinh->move('images/',$ten);
+                 }
+            else
+                {
+                    $ten=$image->Hinhdaidien;
+                }
+
+
+    $data=array('Tieude'=>$td,'Hinhdaidien'=>$ten,'Mota'=>$mt,'Noidung'=>$nd,'Ngaydangtin'=>$ngay,'Tacgia'=>$tg,'Tinhot'=>$hot,'Trangthai'=>$trangthai,'Id_loaitin'=>$id);
+        DB::table('tin')->Where('Id_tin',$idtin)->update($data);
     return redirect('admin/tin/dstin')->with('alert','Cập nhật thành công');
+    
+    }
+   
+    
     }
 }

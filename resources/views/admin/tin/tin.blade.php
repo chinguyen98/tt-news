@@ -25,7 +25,7 @@
                                 <table  class=" table table-bordered table-striped table-hover js-basic-example dataTable ">
                                     <thead>
                                         <tr>
-                                         <th>Id_tin</th>
+                                         <th>Id tin</th>
                                             <th>Tiêu đề</th>
                                         </tr>
                                     </thead>

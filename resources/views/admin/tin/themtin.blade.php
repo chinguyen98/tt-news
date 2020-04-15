@@ -43,7 +43,7 @@
             <div class="col-sm-9">
               <div class="form-group">
                 <div class="form-line">
-                  <input type="text" id="Tieude" name="Tieude" class="form-control" placeholder= "Nhập tiêu đề" required min="1" max="1000" value="{{old('Tieude')}}">
+                  <input type="text" id="Tieude" name="Tieude" class="form-control" placeholder= "Nhập tiêu đề"  min="1" max="1000" value="{{old('Tieude')}}">
                 </div>
               </div>
             </div>

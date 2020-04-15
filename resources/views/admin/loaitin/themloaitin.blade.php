@@ -25,7 +25,7 @@
   
       <div class="row clearfix">
             <div class="col-sm-3 form-control-label">
-              <label for="Ten_KhongDau" >Tên_Nhómtin</label>
+              <label for="Ten_KhongDau" >Tên nhóm tin</label>
             </div>
             <div class="col-sm-9">
            <select name="Id_nhomtin" >
@@ -37,7 +37,7 @@
           </div>
           <div class="row clearfix">
             <div class="col-sm-3 form-control-label">
-              <label for="Tên_loạitin" >Tên_loạitin</label>
+              <label for="Tên_loạitin" >Tên loại tin</label>
             </div>
             <div class="col-sm-9">
               <div class="form-group">

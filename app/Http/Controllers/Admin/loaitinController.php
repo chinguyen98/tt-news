@@ -22,25 +22,32 @@ class loaitinController extends Controller
     
       function laydulieusua(request $request,$id)
     {
-         $kiemtra=$request->validate([
+         $request->validate([
            'Id_nhomtin'=>'required',
-           'Ten_loaitin'=>'required|unique:loaitin|min:2|max:255',
+           'Ten_loaitin'=>'required|min:2|max:255',
          
         ],
         [
             'Id_nhomtin.required'=>'Chưa chọn tên nhóm tin',
             'Ten_loaitin.required'=>'Chưa nhập tên loại tin',
-            'Ten_loaitin.unique'=>'Tên loại tin đã trùng lặp',
             'Ten_loaitin.min'=>'Tên loại tin ít nhất 2 kí tự',
         ]
         );
     	$Id_nhomtin=$request->Id_nhomtin;
     	$Ten_loaitin=$request->Ten_loaitin;
     	$Trangthai=$request->AnHien;
-    
-    	$data=array('Ten_loaitin'=>$Ten_loaitin,'Trangthai'=>$Trangthai,'Id_nhomtin'=>$Id_nhomtin);
-    	DB::table('loaitin')->where('Id_loaitin',$id)->update($data);
-    	return redirect('admin/loaitin/dsloaitin')->with('alert','Cập nhật thành công');
+        $drand=DB::table('loaitin')->where('Ten_loaitin',$Ten_loaitin)->where('Id_loaitin','!=',$id)->first();
+        if($drand!=null)
+        {
+            return redirect('admin/loaitin/dsloaitin')->with('error','Cập nhật thất bại tên đã có');
+        }
+        else
+        {
+           $data=array('Ten_loaitin'=>$Ten_loaitin,'Trangthai'=>$Trangthai,'Id_nhomtin'=>$Id_nhomtin);
+            DB::table('loaitin')->where('Id_loaitin',$id)->update($data);
+            return redirect('admin/loaitin/dsloaitin')->with('alert','Cập nhật thành công'); 
+        }
+    	
     	
     	
     }
@@ -63,16 +70,17 @@ class loaitinController extends Controller
     }
      function laydulieuthem(Request $request)
     {	
-        $kiemtra=$request->validate([
+        $request->validate([
            'Id_nhomtin'=>'required',
            'Ten_loaitin'=>'required|unique:loaitin|min:2|max:255',
            'AnHien'=>'required',
         ],
         [
             'Id_nhomtin.required'=>'Chưa chọn tên nhóm tin',
-            'Ten_loaitin.required'=>'Chưa nhập tên loại tin',
-            'Ten_loaitin.unique'=>'Tên loại tin đã trùng lặp',
-             'AnHien.required'=>'Chưa chọn trạng thái',
+            'Ten_loaitin.required'=>'Thêm thất bại chưa nhập tên loại tin',
+            'Ten_loaitin.unique'=>'Thêm thất bại tên loại tin đã trùng lặp',
+            'AnHien.required'=>'Chưa chọn trạng thái',
+            'Ten_loaitin.min'=>'Thêm thất bại tên loại tin ít nhất 2 kí tự',
         ]
         );
         $Id_nhomtin=$request->Id_nhomtin;
@@ -85,10 +93,10 @@ class loaitinController extends Controller
     	
     	
     }
-     function ketquatimkiem(Request $request)
-    {
-        $drand=DB::table('loaitin')->where('Ten_loaitin','like','%'.$request->search.'%')->orwhere('Id_loaitin',$request->search)->get();
+    //  function ketquatimkiem(Request $request)
+    // {
+    //     $drand=DB::table('loaitin')->where('Ten_loaitin','like','%'.$request->search.'%')->orwhere('Id_loaitin',$request->search)->get();
 
-             return view('admin.loaitin.ketquatimkiem')->with(['drand'=>$drand]);    
-    }
+    //          return view('admin.loaitin.ketquatimkiem')->with(['drand'=>$drand]);    
+    // }
 }

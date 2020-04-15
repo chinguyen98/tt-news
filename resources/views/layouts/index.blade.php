@@ -84,13 +84,8 @@
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
-                            <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
                             <li role="seperator" class="divider"></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">group</i>Followers</a></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
-                            <li role="seperator" class="divider"></li>
-                            <li><a href="/admin/logout"><i class="material-icons">input</i>Sign Out</a></li>
+                            <li><a href="/admin/logout"><i class="material-icons">input</i>Đăng xuất</a></li>
                         </ul>
                     </div>
                 </div>
@@ -104,10 +99,10 @@
             <!-- Footer -->
             <div class="legal">
                 <div class="copyright">
-                    &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+                    &copy; 2020 - 2021 <a href="javascript:void(0);">Admin-ttnews</a>.
                 </div>
                 <div class="version">
-                    <b>Version: </b> 1.0.5
+                    <b>Phiên bản: </b> 1.0.5
                 </div>
             </div>
             <!-- #Footer -->

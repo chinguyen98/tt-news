@@ -28,7 +28,7 @@
                                             <th>Số lần xem </th>
                                             <th>Tin hot</th>
                                             <th>Trang thái</th>
-                                            <th>Id_loaitin</th>
+                                            <th>Id loại tin</th>
                                             <th>Cập nhật/Xóa</th>  
                                         </tr>
                                     </thead>
