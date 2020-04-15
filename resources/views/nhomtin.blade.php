@@ -39,6 +39,12 @@
                 <div class="row m-rl--1">
                     @foreach($nhomtin->listLoaiTin as $loaitin)
 
+                    @if($loaitin->Trangthai == 0)
+
+                    @continue
+
+                    @else
+
                     <div class="col-sm-4 p-rl-1 p-b-2">
                         <div class="bg-img1 size-a-14 how1 pos-relative" style="background-image: url(images/notfound.png);">
                             <a href="/loaitin/{{$loaitin->Id_loaitin}}" class="dis-block how1-child1 trans-03"></a>
@@ -52,6 +58,8 @@
                             </div>
                         </div>
                     </div>
+
+                    @endif
 
                     @endforeach
                 </div>
@@ -76,6 +84,12 @@
 
                     @foreach($loaitin->listTin as $tin)
 
+                    @if($tin->Trangthai == 0)
+
+                    @continue
+
+                    @else
+
                     <div class="col-sm-4 p-rl-1 p-b-2">
                         <div class="bg-img1 size-a-14 how1 pos-relative" style="background-image: url(images/notfound.png);">
                             <a href="blog-detail-01.html" class="dis-block how1-child1 trans-03"></a>
@@ -92,6 +106,8 @@
                             </div>
                         </div>
                     </div>
+
+                    @endif
 
                     @endforeach
 

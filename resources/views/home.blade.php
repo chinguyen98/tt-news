@@ -143,6 +143,12 @@
                             <ul class="nav nav-tabs" role="tablist">
                                 @foreach($nhomtin->listLoaiTin as $loaitin)
 
+                                @if($loaitin->Trangthai == 0)
+
+                                @continue
+
+                                @else
+
                                 <li class="nav-item">
                                     @if($loop->index===0)
                                     <a class="nav-link active" data-toggle="tab" href="#loaitin2-{{$loaitin->Id_loaitin}}" role="tab">{{$loaitin->Ten_loaitin}}</a>
@@ -150,6 +156,8 @@
                                     <a class="nav-link" data-toggle="tab" href="#loaitin2-{{$loaitin->Id_loaitin}}" role="tab">{{$loaitin->Ten_loaitin}}</a>
                                     @endif
                                 </li>
+
+                                @endif
 
                                 @endforeach
                             </ul>
@@ -205,6 +213,9 @@
                                             @elseif($loop->index>3)
                                             @break
 
+                                            @elseif($tin->Trangthai == 0)
+                                            @continue
+
                                             @else
 
                                             <div class="flex-wr-sb-s m-b-30">
@@ -215,7 +226,7 @@
                                                     <h5 class="p-b-5">
                                                         <a href="/tin/{{$loaitin->listTin[0]->Id_tin}}" class="f1-s-5 cl3 hov-cl10 trans-03">
                                                             {{
-                                                                strlen($tin->Tieude)>52 ?  mb_strimwidth($tin->Tieude, 0, 52, '...') :  $tin->Tieude
+                                                            strlen($tin->Tieude)>52 ?  mb_strimwidth($tin->Tieude, 0, 52, '...') :  $tin->Tieude
                                                             }}
                                                         </a>
                                                     </h5>
@@ -235,6 +246,8 @@
                                                     </span>
                                                 </div>
                                             </div>
+
+
 
                                             @endif
 

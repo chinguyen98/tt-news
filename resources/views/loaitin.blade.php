@@ -42,6 +42,13 @@
             <div class="col-md-12 col-lg-12 p-b-80">
                 <div class="row">
                     @foreach($loaitin->listTin as $tin)
+                    
+                    @if($tin->Trangthai == 0)
+
+                    @continue
+
+                    @else
+
                     <div class="col-sm-4 p-r-25 p-r-15-sr991">
                         <!-- Item -->
                         <div class="p-b-53">
@@ -83,6 +90,9 @@
                             </div>
                         </div>
                     </div>
+                    
+                    @endif
+
                     @endforeach
                 </div>
             </div>

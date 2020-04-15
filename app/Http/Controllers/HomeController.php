@@ -12,27 +12,27 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $listnhomtin = Nhomtin::all();
+        $listnhomtin = Nhomtin::where('Trangthai', '!=', 0)->get();
 
         $listLastestNew = array();
         foreach ($listnhomtin as $nhomtin) {
-            $result = DB::select('SELECT tin.Id_tin, tin.Tieude, tin.Ngaydangtin, tin.Hinhdaidien, tin.Tacgia from nhomtin JOIN loaitin on nhomtin.Id_nhomtin=loaitin.Id_nhomtin JOIN tin on loaitin.Id_loaitin=tin.Id_loaitin where nhomtin.Id_nhomtin=? ORDER BY tin.Ngaydangtin DESC LIMIT 1', [$nhomtin->Id_nhomtin]);
+            $result = DB::select('SELECT tin.Id_tin, tin.Tieude, tin.Ngaydangtin, tin.Hinhdaidien, tin.Tacgia from nhomtin JOIN loaitin on nhomtin.Id_nhomtin=loaitin.Id_nhomtin JOIN tin on loaitin.Id_loaitin=tin.Id_loaitin where nhomtin.Id_nhomtin=? and tin.Trangthai=1 ORDER BY tin.Ngaydangtin DESC LIMIT 1', [$nhomtin->Id_nhomtin]);
             $result[0]->tenNhomTin = $nhomtin->Ten_nhomtin;
             $result[0]->Id_nhomtin = $nhomtin->Id_nhomtin;
             $listLastestNew[] = $result[0];
         }
 
-        $trendingList = DB::table('tin')->where('Tinhot', 1)->orderBy('Ngaydangtin')->limit(5)->get(['Id_tin', 'Tieude', 'Hinhdaidien', 'Ngaydangtin']);
+        $trendingList = DB::table('tin')->where('Tinhot', 1)->where('Trangthai', 1)->orderBy('Ngaydangtin')->limit(5)->get(['Id_tin', 'Tieude', 'Hinhdaidien', 'Ngaydangtin']);
 
-        $latestNewsList = DB::table('tin')->orderBy('Ngaydangtin')->limit(6)->get(['Id_tin', 'Tieude', 'Tacgia', 'Hinhdaidien', 'Ngaydangtin']);
+        $latestNewsList = DB::table('tin')->where('Trangthai', 1)->orderBy('Ngaydangtin')->limit(6)->get(['Id_tin', 'Tieude', 'Tacgia', 'Hinhdaidien', 'Ngaydangtin']);
 
         return view('home')->with(['title' => 'Trang chủ', 'listnhomtin' => $listnhomtin, 'listLastestNew' => $listLastestNew, 'trendingList' => $trendingList, 'latestNewsList' => $latestNewsList]);
     }
 
     public function renderNhomTin($id)
     {
-        $listnhomtin = Nhomtin::all();
-        $trendingList = DB::table('tin')->where('Tinhot', 1)->orderBy('Ngaydangtin')->limit(5)->get(['Id_tin', 'Tieude', 'Hinhdaidien', 'Ngaydangtin']);
+        $listnhomtin = Nhomtin::where('Trangthai', '!=', 0)->get();
+        $trendingList = DB::table('tin')->where('Tinhot', 1)->where('Trangthai', 1)->orderBy('Ngaydangtin')->limit(5)->get(['Id_tin', 'Tieude', 'Hinhdaidien', 'Ngaydangtin']);
 
         $nhomtin = Nhomtin::find($id);
 
@@ -41,8 +41,8 @@ class HomeController extends Controller
 
     public function renderLoaiTin($id)
     {
-        $listnhomtin = Nhomtin::all();
-        $trendingList = DB::table('tin')->where('Tinhot', 1)->orderBy('Ngaydangtin')->limit(5)->get(['Id_tin', 'Tieude', 'Hinhdaidien', 'Ngaydangtin']);
+        $listnhomtin = Nhomtin::where('Trangthai', '!=', 0)->get();
+        $trendingList = DB::table('tin')->where('Tinhot', 1)->where('Trangthai', 1)->orderBy('Ngaydangtin')->limit(5)->get(['Id_tin', 'Tieude', 'Hinhdaidien', 'Ngaydangtin']);
 
         $loaitin = Loaitin::find($id);
 
@@ -51,10 +51,8 @@ class HomeController extends Controller
 
     public function renderTin($id)
     {
-        $listnhomtin = Nhomtin::all();
-        $trendingList = DB::table('tin')->where('Tinhot', 1)->orderBy('Ngaydangtin')->limit(5)->get(['Id_tin', 'Tieude', 'Hinhdaidien', 'Ngaydangtin']);
-
-
+        $listnhomtin = Nhomtin::where('Trangthai', '!=', 0)->get();
+        $trendingList = DB::table('tin')->where('Tinhot', 1)->where('Trangthai', 1)->orderBy('Ngaydangtin')->limit(5)->get(['Id_tin', 'Tieude', 'Hinhdaidien', 'Ngaydangtin']);
 
         $tin = Tin::find($id);
 

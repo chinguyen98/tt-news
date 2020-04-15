@@ -99,7 +99,17 @@
                             <div class="sub-mega-menu">
                                 <div class="nav flex-column nav-pills" role="tablist">
                                     @foreach($nhomtin->listLoaiTin as $loaitin)
+
+                                    @if($loaitin->Trangthai == 0)
+
+                                    @continue
+
+                                    @else
+
                                     <a class="nav-link" data-toggle="pill" href="#loaitin-{{$loaitin->Id_loaitin}}" role="tab">{{$loaitin->Ten_loaitin}}</a>
+
+                                    @endif
+
                                     @endforeach
                                 </div>
                                 <div class="tab-content">
@@ -117,6 +127,16 @@
 
                                             <div class="row">
                                                 @foreach($loaitin->listTin as $tin)
+
+                                                @if($loaitin->Trangthai == 0)
+
+                                                @break
+
+                                                @elseif($tin->Trangthai == 0)
+
+                                                @continue
+
+                                                @else
 
                                                 <div class="col-3">
                                                     <div>
@@ -139,6 +159,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
+                                                @endif
 
                                                 @endforeach
                                             </div>
