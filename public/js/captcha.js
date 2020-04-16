@@ -1,6 +1,10 @@
 const captchaRandomTextZone = document.querySelector('.captcha');
 const captchaInput = document.querySelector('input[name="captcha"]');
+const idTinInput = document.querySelector('input[name="Idtin"]');
+const emailInput = document.querySelector('input[name="email"]');
+const contentArea = document.querySelector('textarea[name="msg"]');
 const notifyCaptcha = document.querySelector('.notifyCaptcha');
+const btnBinhLuan = document.querySelector('.btnBinhLuan');
 
 function makeRandomText(length) {
     var result = '';
@@ -26,8 +30,24 @@ const checkCaptcha = function () {
         }, 2000);
         return false;
     }
-    notifyCaptcha.classList.add('d-none');
-    return false;
+    else {
+        notifyCaptcha.classList.add('d-none');
+        return true;
+    }
 }
 
+const storeBinhLuan = async function () {
+    if (checkCaptcha()) {
+        const info = {
+            'Email': emailInput.value,
+            'Noidung': contentArea.value,
+            'Id_tin': idTinInput.value
+        };
+        $.post('/api/binhluan', info, function (data, status) {
+            console.log(data.message)
+        })
+    }
+}
+
+btnBinhLuan.addEventListener('click', storeBinhLuan);
 window.addEventListener('load', createCaptcha);

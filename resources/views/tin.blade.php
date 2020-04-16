@@ -85,8 +85,6 @@
                                 <p class="f1-s-13 cl8 p-b-40">
                                     Vui lòng kèm địa chỉ email (Địa chỉ email của bạn sẽ không công khai)!
                                 </p>
-
-                                <form class="mb-5" onsubmit="return checkCaptcha()">
                                     <textarea class="bo-1-rad-3 bocl13 size-a-15 f1-s-13 cl5 plh6 p-rl-18 p-tb-14 m-b-20" name="msg" placeholder="Bình luận..."></textarea>
 
                                     <!--
@@ -95,7 +93,7 @@
 
                                     <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="email" placeholder="abc@gmail.com">
 
-                                    <input type="hidden" name="Id_tin" value="{{$tin->Id_tin}}">
+                                    <input type="hidden" name="Idtin" value="{{$tin->Id_tin}}">
 
                                     <h1>Vui lòng nhập đúng mã bảo vệ</h1>
                                     <div class='mt-3'>
@@ -103,10 +101,9 @@
                                         <input class="mt-2 bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="captcha">
                                     </div>
                                     <div class="notifyCaptcha bg-danger text-white p-1 text-center d-none"></div>
-                                    <button class="mt-2 size-a-17 bg2 borad-3 f1-s-12 cl0 hov-btn1 trans-03 p-rl-15 m-t-10">
+                                    <button class="btnBinhLuan mt-2 size-a-17 bg2 borad-3 f1-s-12 cl0 hov-btn1 trans-03 p-rl-15 m-t-10">
                                         Bình luận
                                     </button>
-                                </form>
                                 <hr>
                                 <!-- Show BinhLuan -->
 
