@@ -12,9 +12,9 @@
                             <h2>
                                Danh Sách Bình Luận
                             </h2>
-                            <ul class="header-dropdown m-r--5">
-                               
-                            </ul>
+                         
+                                @include('error.note')
+                            
                         </div>
                         <div class="body">
                             <div class="table-responsive">
@@ -42,8 +42,8 @@
                                             <td>{{$c->Trangthai}}</td>
                                             <td>{{$c->Id_tin}}</td>
                                             <td>
-                                            <a href="" class="btn bg-blue waves-effect">Duyệt</a> &nbsp;
-                                            <a href="" class="btn bg-red waves-effect" onClick="return confirm ('Bạn có muốn xóa không')">Xoá</a>
+                                            <a href="admin/binhluan/duyetbinhluan/{{$c->Id_binhluan}}" class="btn bg-blue waves-effect">Duyệt</a> &nbsp;
+                                            <a href="admin/binhluan/xoabinhluan/{{$c->Id_binhluan}}" class="btn bg-red waves-effect" onClick="return confirm ('Bạn có muốn xóa không')">Xoá</a>
                                             </td>
                                         </tr>
                                  @endforeach

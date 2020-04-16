@@ -54,10 +54,12 @@ class HomeController extends Controller
         $listnhomtin = Nhomtin::where('Trangthai', '!=', 0)->get();
         $trendingList = DB::table('tin')->where('Tinhot', 1)->where('Trangthai', 1)->orderBy('Ngaydangtin')->limit(5)->get(['Id_tin', 'Tieude', 'Hinhdaidien', 'Ngaydangtin']);
 
+        $listBinhLuan = DB::table('binhluan')->where('Id_tin', $id)->orderByDesc('Thoigian')->get();
+
         $tin = Tin::find($id);
 
         $relatedPosts = DB::table('tin')->where('Id_loaitin', $tin->Id_loaitin)->orderByDesc('Ngaydangtin')->limit(3)->get(['Id_tin', 'Hinhdaidien', 'Tieude', 'Ngaydangtin']);
 
-        return view('tin')->with(['title' => $tin->Tieude, 'listnhomtin' => $listnhomtin, 'trendingList' => $trendingList, 'tin' => $tin, 'relatedPosts' => $relatedPosts]);
+        return view('tin')->with(['title' => $tin->Tieude, 'listBinhluan' => $listBinhLuan, 'listnhomtin' => $listnhomtin, 'trendingList' => $trendingList, 'tin' => $tin, 'relatedPosts' => $relatedPosts]);
     }
 }

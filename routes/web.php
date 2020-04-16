@@ -65,5 +65,7 @@ Route::group(['prefix' => 'admin'], function () {
     //binhluan
     Route::group(['prefix' => 'binhluan'], function () {
         Route::get('binhluan', 'Admin\binhluanController@binhluan');
+        Route::get('duyetbinhluan/{id}', 'Admin\binhluanController@duyetbinhluan');
+        Route::get('xoabinhluan/{id}', 'Admin\binhluanController@xoabinhluan');
     });
 });

@@ -86,12 +86,14 @@
                                     Vui lòng kèm địa chỉ email (Địa chỉ email của bạn sẽ không công khai)!
                                 </p>
                                     <textarea class="bo-1-rad-3 bocl13 size-a-15 f1-s-13 cl5 plh6 p-rl-18 p-tb-14 m-b-20" name="msg" placeholder="Bình luận..."></textarea>
+                                    <div class="notifyNoidung mb-2 bg-danger text-white p-1 text-center d-none"></div>
 
                                     <!--
                                     <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="name" placeholder="Tên">
                                     -->
 
                                     <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="email" placeholder="abc@gmail.com">
+                                    <div class="notifyEmail mb-2 bg-danger text-white p-1 text-center d-none"></div>
 
                                     <input type="hidden" name="Idtin" value="{{$tin->Id_tin}}">
 
@@ -104,12 +106,13 @@
                                     <button class="btnBinhLuan mt-2 size-a-17 bg2 borad-3 f1-s-12 cl0 hov-btn1 trans-03 p-rl-15 m-t-10">
                                         Bình luận
                                     </button>
+                                    <div class="mt-5 notifySuccess bg-success text-white p-3 text-center d-none"></div>
                                 <hr>
                                 <!-- Show BinhLuan -->
 
                                 <div>
 
-                                    @foreach($tin->listBinhLuan as $binhluan)
+                                    @foreach($listBinhluan as $binhluan)
 
                                     @if($binhluan->Trangthai == 0)
 
