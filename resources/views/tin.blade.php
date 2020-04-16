@@ -64,7 +64,7 @@
                             </span>
 
                             <a href="#" class="f1-s-3 cl8 hov-cl10 trans-03 m-r-15">
-                                0 bình luận
+                                {{count($tin->listBinhLuan)}} bình luận
                             </a>
                         </div>
 
@@ -86,7 +86,7 @@
                                     Vui lòng kèm địa chỉ email (Địa chỉ email của bạn sẽ không công khai)!
                                 </p>
 
-                                <form>
+                                <form class="mb-5">
                                     <textarea class="bo-1-rad-3 bocl13 size-a-15 f1-s-13 cl5 plh6 p-rl-18 p-tb-14 m-b-20" name="msg" placeholder="Bình luận..."></textarea>
 
                                     <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="name" placeholder="Tên">
@@ -97,6 +97,32 @@
                                         Bình luận
                                     </button>
                                 </form>
+                                <hr>
+                                <!-- Show BinhLuan -->
+
+                                <div>
+
+                                    @foreach($tin->listBinhLuan as $binhluan)
+
+                                    @if($binhluan->Trangthai == 0)
+
+                                    @continue
+
+                                    @else
+
+                                    <div>
+                                        <strong>{{$binhluan->Thoigian}}</strong>
+                                        <p>{{$binhluan->Noidung}}</p>
+                                        <hr>
+                                    </div>
+
+                                    @endif
+
+                                    @endforeach
+
+                                </div>
+
+                                <!-- End Show BinhLuan -->
                             </div>
                             <div class="col col-sm-12 col-md-4">
                                 <div class="size-h-3 flex-s-c">

@@ -11,6 +11,11 @@ class Tin extends Model
         return $this->belongsTo(Loaitin::class, 'Id_loaitin');
     }
 
+    public function listBinhLuan()
+    {
+        return $this->hasMany(Binhluan::class, 'Id_tin', 'Id_tin');
+    }
+
     protected $primaryKey = 'Id_tin';
     protected $table = 'tin';
 }
