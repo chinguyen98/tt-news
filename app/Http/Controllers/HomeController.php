@@ -63,12 +63,37 @@ class HomeController extends Controller
         return view('tin')->with(['title' => $tin->Tieude, 'listBinhluan' => $listBinhLuan, 'listnhomtin' => $listnhomtin, 'trendingList' => $trendingList, 'tin' => $tin, 'relatedPosts' => $relatedPosts]);
     }
 
+    protected function fullTextWildcards($term)
+    {
+        // removing symbols used by MySQL
+        $reservedSymbols = ['-', '+', '<', '>', '@', '(', ')', '~'];
+        $term = str_replace($reservedSymbols, '', $term);
+
+        $words = explode(' ', $term);
+
+        foreach ($words as $key => $word) {
+            /*
+            * applying + operator (required word) only big words
+            * because smaller ones are not indexed by mysql
+            */
+            if (strlen($word) >= 1) {
+                $words[$key] = '+' . $word . '*';
+            }
+        }
+
+        $searchTerm = implode(' ', $words);
+
+        return $searchTerm;
+    }
+
     public function search(Request $request)
     {
         $listnhomtin = Nhomtin::where('Trangthai', '!=', 0)->get();
         $trendingList = DB::table('tin')->where('Tinhot', 1)->where('Trangthai', 1)->orderBy('Ngaydangtin')->limit(5)->get(['Id_tin', 'Tieude', 'Hinhdaidien', 'Ngaydangtin']);
 
+        $str = $this->fullTextWildcards($request->query('noidung'));
+        $searchResult = Tin::whereRaw('MATCH (Tieude, Mota) AGAINST (?)', array($str))->get();
 
-        return view('userSearch')->with(['title' => 'Tìm kiếm', 'listnhomtin' => $listnhomtin, 'trendingList' => $trendingList]);
+        return view('userSearch')->with(['title' => 'Tìm kiếm', 'listnhomtin' => $listnhomtin, 'trendingList' => $trendingList, 'searchResult' => $searchResult, 'searchKey' => $request->query('noidung')]);
     }
 }
