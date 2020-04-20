@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/search', 'HomeController@search')->name('user.search');
+
 Route::get('/nhomtin/{id}', 'HomeController@renderNhomTin')->name('user.nhomtin');
 
 Route::get('/loaitin/{id}', 'HomeController@renderLoaiTin')->name('user.loaitin');

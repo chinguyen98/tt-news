@@ -62,4 +62,13 @@ class HomeController extends Controller
 
         return view('tin')->with(['title' => $tin->Tieude, 'listBinhluan' => $listBinhLuan, 'listnhomtin' => $listnhomtin, 'trendingList' => $trendingList, 'tin' => $tin, 'relatedPosts' => $relatedPosts]);
     }
+
+    public function search(Request $request)
+    {
+        $listnhomtin = Nhomtin::where('Trangthai', '!=', 0)->get();
+        $trendingList = DB::table('tin')->where('Tinhot', 1)->where('Trangthai', 1)->orderBy('Ngaydangtin')->limit(5)->get(['Id_tin', 'Tieude', 'Hinhdaidien', 'Ngaydangtin']);
+
+
+        return view('userSearch')->with(['title' => 'Tìm kiếm', 'listnhomtin' => $listnhomtin, 'trendingList' => $trendingList]);
+    }
 }
