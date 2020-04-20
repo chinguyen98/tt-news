@@ -97,13 +97,13 @@
 
                                     <input type="hidden" name="Idtin" value="{{$tin->Id_tin}}">
 
-                                    <h1>Vui lòng nhập đúng mã bảo vệ</h1>
+                                    <h1 class="mb-5">Vui lòng nhập đúng mã bảo vệ</h1>
                                     <div class='mt-3'>
-                                        <h1 class="captcha"></h1>
-                                        <input class="mt-2 bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="captcha">
+                                        <div class="captchaContainer"><i><h1 class="captcha"></h1></i></div>
+                                        <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="captcha">
                                     </div>
                                     <div class="notifyCaptcha bg-danger text-white p-1 text-center d-none"></div>
-                                    <button class="btnBinhLuan mt-2 size-a-17 bg2 borad-3 f1-s-12 cl0 hov-btn1 trans-03 p-rl-15 m-t-10">
+                                    <button class="btnBinhLuan size-a-17 bg2 borad-3 f1-s-12 cl0 hov-btn1 trans-03 p-rl-15 m-t-10">
                                         Bình luận
                                     </button>
                                     <div class="mt-5 notifySuccess bg-success text-white p-3 text-center d-none"></div>
