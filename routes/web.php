@@ -24,6 +24,8 @@ Route::get('/loaitin/{id}', 'HomeController@renderLoaiTin')->name('user.loaitin'
 
 Route::get('/tin/{id}', 'HomeController@renderTin')->name('user.tin');
 
+Route::get('/about', 'HomeController@renderAbout');
+
 /* Admin Routes */
 
 Auth::routes();

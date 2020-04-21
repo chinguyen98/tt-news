@@ -4,7 +4,7 @@
         <div class="topbar">
             <div class="content-topbar container h-100">
                 <div class="left-topbar">
-                    <a href="#" class="left-topbar-item">
+                    <a href=/about class="left-topbar-item">
                         Về chúng tôi
                     </a>
                 </div>
