@@ -25,8 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $binhluan = DB::table('binhluan')->where('Thoigian', today())->count();
-        $tintuc = DB::table('tin')->where('Ngaydangtin', today())->count();
-        return view('admin/home')->with(['binhluan' => $binhluan, 'tintuc' => $tintuc]);
+        $binhluan = DB::select('select * from binhluan where DATE(Thoigian)= ?', [date("Y-m-d")]);
+        $tintuc = DB::select('select * from tin where DATE(Ngaydangtin)= ?', [date("Y-m-d")]);
+        return view('admin/home')->with(['binhluan' => count($binhluan), 'tintuc' => count($tintuc)]);
     }
 }

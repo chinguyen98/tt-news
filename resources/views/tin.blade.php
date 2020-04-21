@@ -116,7 +116,8 @@
                                     @else
 
                                     <div>
-                                        <strong>{{$binhluan->Thoigian}}</strong>
+                                        <strong>{{$binhluan->Ten}}</strong>
+                                        <div><strong class="text-success">{{$binhluan->Thoigian}}</strong></div>
                                         <p>{{$binhluan->Noidung}}</p>
                                         <hr>
                                     </div>

@@ -8,47 +8,40 @@
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
+
                         <div class="header">
+                          
                             <h2>
-                               Danh Sách Bình Luận
+                               Danh Sách Quản Trị
                             </h2>
-                         
-                                @include('error.note')
-                            
+
                         </div>
+                          @include('error.note')
                         <div class="body">
                             <div class="table-responsive">
                                 <table  class=" table table-bordered table-striped table-hover js-basic-example dataTable ">
                                     <thead>
                                         <tr>
-                                            <th>Id bình luận</th>
-                                            <th>Tên </th>
-                                            <th>email</th>
-                                            <th>Thời gian</th>
-                                            <th>Nội dung</th>
-                                            <th>Trang thái</th>
-                                            <th>Id tin</th>
-                                            <th>Duyệt/Xóa</th>  
+                                            <th>Id quản trị </th>
+                                            <th>Tên quản trị</th>
+                                            <th>Email</th>
+                                            <th>Xóa</th> 
                                         </tr>
                                     </thead>
                                     
                                     <tbody>
-                                            
-                                   @foreach($comment as $c)
+                                     @foreach($quantri as $qt)    
+                                   
                                         <tr>
-                                            <td>{{$c->Id_binhluan}}</td>
-                                            <td>{{$c->Ten}}</td>
-                                            <td>{{$c->Email}}</td>
-                                            <td>{{$c->Thoigian}}</td>
-                                            <td>{{$c->Noidung}}</td>
-                                            <td>{{$c->Trangthai}}</td>
-                                            <td>{{$c->Id_tin}}</td>
+                                            <td>{{$qt->id}}</td>
+                                            <td>{{$qt->Ten_admin}}</td>
+                                            <td>{{$qt->email}}</td>
                                             <td>
-                                            <a href="admin/binhluan/duyetbinhluan/{{$c->Id_binhluan}}" class="btn bg-blue waves-effect">Duyệt</a> &nbsp;
-                                            <a href="admin/binhluan/xoabinhluan/{{$c->Id_binhluan}}" class="btn bg-red waves-effect" onClick="return confirm ('Bạn có muốn xóa không')">Xoá</a>
+                                      
+                                            <a href="admin/quantri/xoaquantri/{{$qt->id}}" class="btn bg-red waves-effect" onClick="return confirm ('Bạn có muốn xóa không')">Xoá</a>
                                             </td>
                                         </tr>
-                                 @endforeach
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>
