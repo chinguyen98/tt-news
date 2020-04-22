@@ -61,7 +61,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('themtin', 'Admin\tinController@themtin');
         Route::post('laydulieuthem', 'Admin\tinController@laydulieuthem');
         Route::get('chitiettin/{id}', 'Admin\tinController@chitiettin');
-        Route::post('ketquatimkiem', 'Admin\tinController@ketquatimkiem');
+        Route::get('ketquatimkiem', 'Admin\tinController@ketquatimkiem')->name('search');
         Route::get('xoatin/{id}/{idl}', 'Admin\tinController@xoatin');
         Route::get('suatin/{id}', 'Admin\tinController@suatin');
         Route::post('laydulieusua/{id}', 'Admin\tinController@laydulieusua');

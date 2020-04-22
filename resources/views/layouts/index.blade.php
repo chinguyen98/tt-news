@@ -6,9 +6,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Welcome To | Admin News</title>
+    <title>Quản trị website</title>
     <!-- Favicon-->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+     <link rel="shortcut icon " href="images/icon_icons_original.png" />
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
@@ -299,6 +300,7 @@
     <!-- Demo Js -->
     <script src="js/demo.js"></script>
     <script src="ckeditor/ckeditor.js" type="text/javascript" charset="utf-8" async defer></script>
+    @yield('ajax')
 </body>
 
 </html>
