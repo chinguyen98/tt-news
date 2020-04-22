@@ -2,9 +2,11 @@ const captchaRandomTextZone = document.querySelector('.captcha');
 const captchaInput = document.querySelector('input[name="captcha"]');
 const idTinInput = document.querySelector('input[name="Idtin"]');
 const emailInput = document.querySelector('input[name="email"]');
+const tenInput = document.querySelector('input[name="Ten"]');
 const contentArea = document.querySelector('textarea[name="msg"]');
 const notifyCaptcha = document.querySelector('.notifyCaptcha');
 const notifyNoidung = document.querySelector('.notifyNoidung');
+const notifyTen = document.querySelector('.notifyName');
 const notifySuccess = document.querySelector('.notifySuccess');
 const notifyEmail = document.querySelector('.notifyEmail');
 const btnBinhLuan = document.querySelector('.btnBinhLuan');
@@ -13,6 +15,7 @@ const checkEmailAndContent = function () {
     let regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     notifyEmail.classList.add('d-none');
     notifyNoidung.classList.add('d-none');
+    notifyTen.classList.add('d-none');
     notifyEmail.innerHTML = '';
     let flag = true;
     if (!emailInput.value.match(regex)) {
@@ -28,6 +31,14 @@ const checkEmailAndContent = function () {
         notifyNoidung.classList.remove('d-none');
         setTimeout(function () {
             notifyNoidung.classList.add('d-none');
+        }, 2000);
+        flag = false;
+    }
+    if (tenInput.value === '') {
+        notifyTen.innerHTML = 'Vui lòng nhập tên của bạn!';
+        notifyTen.classList.remove('d-none');
+        setTimeout(function () {
+            notifyTen.classList.add('d-none');
         }, 2000);
         flag = false;
     }
@@ -72,7 +83,8 @@ const storeBinhLuan = async function () {
             const info = {
                 'Email': emailInput.value,
                 'Noidung': contentArea.value,
-                'Id_tin': idTinInput.value
+                'Id_tin': idTinInput.value,
+                'Ten': tenInput.value,
             };
             $.post('/api/binhluan', info, function (data, status) {
                 notifySuccess.innerHTML = data.message;
@@ -82,6 +94,7 @@ const storeBinhLuan = async function () {
                 }, 5000);
                 emailInput.value = '';
                 contentArea.value = '';
+                tenInput.value = '';
                 createCaptcha();
             })
         }

@@ -39,6 +39,7 @@ class BinhluanController extends Controller
     {
         $data = $request->all();
         DB::table('binhluan')->insert([
+            'Ten' => $data['Ten'],
             'Email' => $data['Email'],
             'Thoigian' => date('Y-m-d H:i:s'),
             'Noidung' => $data['Noidung'],
