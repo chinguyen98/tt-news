@@ -14,7 +14,9 @@
                 @foreach($trendingList as $item)
 
                 <span class="dis-inline-block slide100-txt-item animated visible-false">
-                    {{$item->Tieude}}
+                {{
+                    strlen($item->Tieude)>100 ?  mb_strimwidth($item->Tieude, 0, 100, '...') :  $item->Tieude
+                }}
                 </span>
 
                 @endforeach

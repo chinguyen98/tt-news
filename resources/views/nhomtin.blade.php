@@ -86,7 +86,7 @@
                     @else
 
                     <div class="col-sm-4 p-rl-1 p-b-2">
-                        <div class="bg-img1 size-a-14 how1 pos-relative" style="background-image: url(images/notfound.png);">
+                        <div class="bg-img1 size-a-14 how1 pos-relative" style="background-image: url(images/{{$tin->Hinhdaidien}});">
                             <a href="/tin/{{$tin->Id_tin}}" class="dis-block how1-child1 trans-03"></a>
 
                             <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
