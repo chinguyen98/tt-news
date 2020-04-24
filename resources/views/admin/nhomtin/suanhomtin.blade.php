@@ -25,7 +25,7 @@
         
           <div class="row clearfix">
             <div class="col-sm-3 form-control-label">
-              <label for="Ten_KhongDau" >Tên_nhomtin</label>
+              <label for="Ten_KhongDau" >Tên nhóm tin</label>
             </div>
             <div class="col-sm-9">
               <div class="form-group">

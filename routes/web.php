@@ -73,7 +73,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('xoabinhluan/{id}', 'Admin\binhluanController@xoabinhluan');
     });
     //quantri
-    Route::group(['prefix' => 'quantri'], function () {
+    Route::group(['prefix' => 'quantri', 'middleware' => ['check']], function () {
         Route::get('quantri', 'Admin\quantriController@dsquantri');
         Route::get('xoaquantri/{id}', 'Admin\quantriController@xoaquantri');
     });

@@ -216,12 +216,12 @@
                                             @else
 
                                             <div class="flex-wr-sb-s m-b-30">
-                                                <a href="/tin/{{$loaitin->listTin[0]->Id_tin}}" class="size-w-1 wrap-pic-w hov1 trans-03">
+                                                <a href="/tin/{{$tin->Id_tin}}" class="size-w-1 wrap-pic-w hov1 trans-03">
                                                     <img src="images/{{$tin->Hinhdaidien}}" alt="IMG">
                                                 </a>
                                                 <div class="size-w-2">
                                                     <h5 class="p-b-5">
-                                                        <a href="/tin/{{$loaitin->listTin[0]->Id_tin}}" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                                        <a href="/tin/{{$tin->Id_tin}}" class="f1-s-5 cl3 hov-cl10 trans-03">
                                                             {{
                                                             strlen($tin->Tieude)>52 ?  mb_strimwidth($tin->Tieude, 0, 52, '...') :  $tin->Tieude
                                                             }}
