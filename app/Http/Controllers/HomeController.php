@@ -22,9 +22,9 @@ class HomeController extends Controller
             $listLastestNew[] = $result[0];
         }
 
-        $trendingList = DB::table('tin')->where('Tinhot', 1)->where('Trangthai', 1)->orderBy('Ngaydangtin')->limit(5)->get(['Id_tin', 'Tieude', 'Hinhdaidien', 'Ngaydangtin']);
+        $trendingList = DB::table('tin')->where('Tinhot', 1)->where('Trangthai', 1)->orderByDesc('Ngaydangtin')->limit(5)->get(['Id_tin', 'Tieude', 'Hinhdaidien', 'Ngaydangtin']);
 
-        $latestNewsList = DB::table('tin')->where('Trangthai', 1)->orderBy('Ngaydangtin')->limit(6)->get(['Id_tin', 'Tieude', 'Tacgia', 'Hinhdaidien', 'Ngaydangtin']);
+        $latestNewsList = DB::table('tin')->where('Trangthai', 1)->orderByDesc('Ngaydangtin')->limit(6)->get(['Id_tin', 'Tieude', 'Tacgia', 'Hinhdaidien', 'Ngaydangtin']);
 
         return view('home')->with(['title' => 'Trang chủ', 'listnhomtin' => $listnhomtin, 'listLastestNew' => $listLastestNew, 'trendingList' => $trendingList, 'latestNewsList' => $latestNewsList]);
     }
@@ -32,7 +32,7 @@ class HomeController extends Controller
     public function renderNhomTin($id)
     {
         $listnhomtin = Nhomtin::where('Trangthai', '!=', 0)->get();
-        $trendingList = DB::table('tin')->where('Tinhot', 1)->where('Trangthai', 1)->orderBy('Ngaydangtin')->limit(5)->get(['Id_tin', 'Tieude', 'Hinhdaidien', 'Ngaydangtin']);
+        $trendingList = DB::table('tin')->where('Tinhot', 1)->where('Trangthai', 1)->orderByDesc('Ngaydangtin')->limit(5)->get(['Id_tin', 'Tieude', 'Hinhdaidien', 'Ngaydangtin']);
 
         $nhomtin = Nhomtin::find($id);
 
@@ -42,7 +42,7 @@ class HomeController extends Controller
     public function renderLoaiTin($id)
     {
         $listnhomtin = Nhomtin::where('Trangthai', '!=', 0)->get();
-        $trendingList = DB::table('tin')->where('Tinhot', 1)->where('Trangthai', 1)->orderBy('Ngaydangtin')->limit(5)->get(['Id_tin', 'Tieude', 'Hinhdaidien', 'Ngaydangtin']);
+        $trendingList = DB::table('tin')->where('Tinhot', 1)->where('Trangthai', 1)->orderByDesc('Ngaydangtin')->limit(5)->get(['Id_tin', 'Tieude', 'Hinhdaidien', 'Ngaydangtin']);
 
         $loaitin = Loaitin::find($id);
 
@@ -52,7 +52,7 @@ class HomeController extends Controller
     public function renderTin($id)
     {
         $listnhomtin = Nhomtin::where('Trangthai', '!=', 0)->get();
-        $trendingList = DB::table('tin')->where('Tinhot', 1)->where('Trangthai', 1)->orderBy('Ngaydangtin')->limit(5)->get(['Id_tin', 'Tieude', 'Hinhdaidien', 'Ngaydangtin']);
+        $trendingList = DB::table('tin')->where('Tinhot', 1)->where('Trangthai', 1)->orderByDesc('Ngaydangtin')->limit(5)->get(['Id_tin', 'Tieude', 'Hinhdaidien', 'Ngaydangtin']);
 
         $listBinhLuan = DB::table('binhluan')->where('Id_tin', $id)->orderByDesc('Thoigian')->get();
 
@@ -89,7 +89,7 @@ class HomeController extends Controller
     public function search(Request $request)
     {
         $listnhomtin = Nhomtin::where('Trangthai', '!=', 0)->get();
-        $trendingList = DB::table('tin')->where('Tinhot', 1)->where('Trangthai', 1)->orderBy('Ngaydangtin')->limit(5)->get(['Id_tin', 'Tieude', 'Hinhdaidien', 'Ngaydangtin']);
+        $trendingList = DB::table('tin')->where('Tinhot', 1)->where('Trangthai', 1)->orderByDesc('Ngaydangtin')->limit(5)->get(['Id_tin', 'Tieude', 'Hinhdaidien', 'Ngaydangtin']);
 
         $str = $this->fullTextWildcards($request->query('noidung'));
         $searchResult = Tin::whereRaw('MATCH (Tieude, Mota) AGAINST (?)', array($str))->get();

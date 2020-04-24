@@ -8,7 +8,7 @@ class Loaitin extends Model
 {
     public function listTin()
     {
-        return $this->hasMany(Tin::class, 'Id_loaitin', 'Id_loaitin');
+        return $this->hasMany(Tin::class, 'Id_loaitin', 'Id_loaitin')->orderByDesc('Ngaydangtin');
     }
 
     public function nhomtin()
