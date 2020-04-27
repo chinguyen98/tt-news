@@ -4,8 +4,28 @@
 }
 
 .captcha{
-    color: rebeccapurple;
-    font-size: 5vw;
+    color: rgb(30, 255, 0);
+    font-size: 4vw;
     user-select: none;
     width: fit-content;
+}
+
+.replyContainer{
+    position: fixed;
+    color: white;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgb(123, 107, 160);
+    z-index: 9999999;
+}
+
+.replyContainer span{
+    font-size: 2vw;
+}
+
+.replyContainer__close{
+    color: red;
+    cursor: pointer;
 }

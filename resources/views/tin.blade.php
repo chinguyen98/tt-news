@@ -70,44 +70,9 @@
                         <div style="text-align: justify">
                             {!! $tin->Noidung !!}
                         </div>
+                        <button class="showReplyContainerBtn btn btn-primary mt-3">Bình luận bài viết này.</button>
                         <div class="row mt-5">
                             <div class="col col-sm-12 col-md-8">
-                                <!-- Leave a comment -->
-                                <h4 class="f1-l-4 cl3 p-b-12">
-                                    Bình luận:
-                                </h4>
-
-                                <p class="f1-s-13 cl8 p-b-40">
-                                    Vui lòng kèm địa chỉ email (Địa chỉ email của bạn sẽ không công khai)!
-                                </p>
-                                <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="Ten" placeholder="Tên của bạn">
-                                <div class="notifyName mb-2 bg-danger text-white p-1 text-center d-none"></div>
-
-                                <textarea class="bo-1-rad-3 bocl13 size-a-15 f1-s-13 cl5 plh6 p-rl-18 p-tb-14 m-b-20" name="msg" placeholder="Bình luận..."></textarea>
-                                <div class="notifyNoidung mb-2 bg-danger text-white p-1 text-center d-none"></div>
-
-                                <!--
-                                    <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="name" placeholder="Tên">
-                                    -->
-
-                                <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="email" placeholder="abc@gmail.com">
-                                <div class="notifyEmail mb-2 bg-danger text-white p-1 text-center d-none"></div>
-
-                                <input type="hidden" name="Idtin" value="{{$tin->Id_tin}}">
-
-                                <h1 class="mb-5">Vui lòng nhập đúng mã bảo vệ</h1>
-                                <div class='mt-3'>
-                                    <div class="captchaContainer"><i>
-                                            <h1 class="captcha"></h1>
-                                        </i></div>
-                                    <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="captcha">
-                                </div>
-                                <div class="notifyCaptcha bg-danger text-white p-1 text-center d-none"></div>
-                                <button class="btnBinhLuan size-a-17 bg2 borad-3 f1-s-12 cl0 hov-btn1 trans-03 p-rl-15 m-t-10">
-                                    Bình luận
-                                </button>
-                                <div class="mt-5 notifySuccess bg-success text-white p-3 text-center d-none"></div>
-                                <hr>
                                 <!-- Show BinhLuan -->
 
                                 <div>
@@ -129,7 +94,7 @@
                                         <a data-idBinhLuanCha="{{$binhluan->Id_binhluan}}" style="cursor: pointer" class="replyBinhluan text-primary">Xem phản hồi</a>
                                         <a data-idBinhLuanCha="{{$binhluan->Id_binhluan}}" style="cursor: pointer" class=" ml-3 text-success">Trả lời</a>
                                         <div data-replyBinhluanCha="{{$binhluan->Id_binhluan}}" class="ml-4">
-                                            
+
                                         </div>
                                         <hr>
                                     </div>
@@ -173,10 +138,51 @@
                                 </ul>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="replyContainer d-none p-1">
+        <!-- Leave a comment -->
+        <div class="d-flex justify-content-between align-items-center">
+            <span>
+                <h1>Bình luận:</h1>
+            </span>
+            <span class="replyContainer__close">X</span>
+        </div>
+
+        <p class="f1-s-13 cl8 p-b-40 text-white">
+            Vui lòng kèm địa chỉ email (Địa chỉ email của bạn sẽ không công khai)!
+        </p>
+        <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="Ten" placeholder="Tên của bạn">
+        <div class="notifyName mb-2 bg-danger text-white p-1 text-center d-none"></div>
+
+        <textarea rows="2" class="bo-1-rad-3 bocl13 size-a-15 f1-s-13 cl5 plh6 p-rl-18 p-tb-14 m-b-20" name="msg" placeholder="Nhập bình luận"></textarea>
+        <div class="notifyNoidung mb-2 bg-danger text-white p-1 text-center d-none"></div>
+
+        <!--
+                                    <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="name" placeholder="Tên">
+                                    -->
+
+        <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="email" placeholder="abc@gmail.com">
+        <div class="notifyEmail mb-2 bg-danger text-white p-1 text-center d-none"></div>
+
+        <input type="hidden" name="Idtin" value="{{$tin->Id_tin}}">
+
+        <h1 class="mb-5">Vui lòng nhập đúng mã bảo vệ</h1>
+        <div class='mt-3'>
+            <div class="captchaContainer"><i>
+                    <h1 class="captcha"></h1>
+                </i></div>
+            <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="captcha">
+        </div>
+        <div class="notifyCaptcha bg-danger text-white p-1 text-center d-none"></div>
+        <div class="mt-5 notifySuccess bg-success text-white p-3 text-center d-none"></div>
+        <button class="btnBinhLuan size-a-17 bg2 borad-3 f1-s-12 cl0 hov-btn1 trans-03 p-rl-15 m-t-10">
+            Bình luận
+        </button>
     </div>
 </section>
 

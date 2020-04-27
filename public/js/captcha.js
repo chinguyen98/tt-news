@@ -11,6 +11,9 @@ const notifySuccess = document.querySelector('.notifySuccess');
 const notifyEmail = document.querySelector('.notifyEmail');
 const btnBinhLuan = document.querySelector('.btnBinhLuan');
 let replyBinhluanList = Array.from(document.querySelectorAll('.replyBinhluan'));
+const replyContainerClose = document.querySelector('.replyContainer__close');
+const replyContainer = document.querySelector('.replyContainer');
+const showReplyContainerBtn = document.querySelector('.showReplyContainerBtn');
 
 const checkEmailAndContent = function () {
     let regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -48,7 +51,7 @@ const checkEmailAndContent = function () {
 
 const makeRandomText = function (length) {
     var result = '';
-    var characters = 'ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz0123456789';
+    var characters = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnopqrstuvwxyz23456789';
     var charactersLength = characters.length;
     for (var i = 0; i < length; i++) {
         result += characters.charAt(Math.floor(Math.random() * charactersLength));
@@ -134,4 +137,6 @@ btnBinhLuan.addEventListener('click', storeBinhLuan);
 window.addEventListener('load', createCaptcha);
 replyBinhluanList.forEach(item => {
     item.addEventListener('click', replyBinhluan);
-})
+});
+replyContainerClose.addEventListener('click', () => { replyContainer.classList.add('d-none') });
+showReplyContainerBtn.addEventListener('click', () => { replyContainer.classList.remove('d-none') });
