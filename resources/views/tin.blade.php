@@ -82,7 +82,7 @@
                                 </p>
                                 <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="Ten" placeholder="Tên của bạn">
                                 <div class="notifyName mb-2 bg-danger text-white p-1 text-center d-none"></div>
-                                
+
                                 <textarea class="bo-1-rad-3 bocl13 size-a-15 f1-s-13 cl5 plh6 p-rl-18 p-tb-14 m-b-20" name="msg" placeholder="Bình luận..."></textarea>
                                 <div class="notifyNoidung mb-2 bg-danger text-white p-1 text-center d-none"></div>
 
@@ -118,12 +118,19 @@
 
                                     @continue
 
-                                    @else
+                                    @elseif($binhluan->Trangthai != 0 && $binhluan->Binhluan_cha==null)
 
                                     <div>
-                                        <strong>{{$binhluan->Ten}}</strong>
-                                        <div><strong class="text-success">{{$binhluan->Thoigian}}</strong></div>
+                                        <div class="d-flex">
+                                            <strong class="mr-3">{{$binhluan->Ten}}</strong>
+                                            <div><strong class="text-success">{{$binhluan->Thoigian}}</strong></div>
+                                        </div>
                                         <p>{{$binhluan->Noidung}}</p>
+                                        <a data-idBinhLuanCha="{{$binhluan->Id_binhluan}}" style="cursor: pointer" class="replyBinhluan text-primary">Xem phản hồi</a>
+                                        <a data-idBinhLuanCha="{{$binhluan->Id_binhluan}}" style="cursor: pointer" class=" ml-3 text-success">Trả lời</a>
+                                        <div data-replyBinhluanCha="{{$binhluan->Id_binhluan}}" class="ml-4">
+                                            
+                                        </div>
                                         <hr>
                                     </div>
 

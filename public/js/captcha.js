@@ -10,6 +10,7 @@ const notifyTen = document.querySelector('.notifyName');
 const notifySuccess = document.querySelector('.notifySuccess');
 const notifyEmail = document.querySelector('.notifyEmail');
 const btnBinhLuan = document.querySelector('.btnBinhLuan');
+let replyBinhluanList = Array.from(document.querySelectorAll('.replyBinhluan'));
 
 const checkEmailAndContent = function () {
     let regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -101,5 +102,36 @@ const storeBinhLuan = async function () {
     }
 }
 
+const replyBinhluan = function (e) {
+    const id = e.target.dataset.idbinhluancha;
+    $.get(`/api/binhluancon/${id}`, function (data, status) {
+        const exportHtml = data.length === 0 ? '<p class="mt-3 text-danger">Không có tin phản hồi!</p>' : data.map(item =>
+            `
+            <div>
+                <hr>
+                <div class="d-flex">
+                    <strong class="mr-3">${item.Ten}</strong>
+                    <div><strong class="text-success">${item.Thoigian}</strong></div>
+                </div>
+                <p>${item.Noidung}</p>
+                <a data-idBinhLuanCha="${item.Id_binhluan}" style="cursor: pointer" class="replyBinhluan text-primary">Xem phản hồi</a>
+                <a data-idBinhLuanCha="${item.Id_binhluan}" style="cursor: pointer" class="replyBinhluan ml-3 text-success">Trả lời</a>
+                <div data-replyBinhluanCha="${item.Id_binhluan}" class="ml-4">
+                    
+                </div>
+            </div>
+            `
+        ).join('');
+        document.querySelector(`[data-replyBinhluanCha="${id}"]`).innerHTML = exportHtml;
+        replyBinhluanList = Array.from(document.querySelectorAll('.replyBinhluan'));
+        replyBinhluanList.forEach(item => {
+            item.addEventListener('click', replyBinhluan);
+        })
+    })
+}
+
 btnBinhLuan.addEventListener('click', storeBinhLuan);
 window.addEventListener('load', createCaptcha);
+replyBinhluanList.forEach(item => {
+    item.addEventListener('click', replyBinhluan);
+})
