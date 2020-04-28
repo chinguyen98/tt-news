@@ -86,6 +86,7 @@
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
                             <li role="seperator" class="divider"></li>
+                              <li><a href="/admin/reset"><i class="material-icons">build</i>Đổi mật khẩu 
                             <li><a href="/admin/logout"><i class="material-icons">input</i>Đăng xuất</a></li>
                         </ul>
                     </div>
