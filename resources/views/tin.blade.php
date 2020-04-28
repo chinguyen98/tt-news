@@ -92,7 +92,7 @@
                                         </div>
                                         <p>{{$binhluan->Noidung}}</p>
                                         <a data-idBinhLuanCha="{{$binhluan->Id_binhluan}}" style="cursor: pointer" class="replyBinhluan text-primary">Xem phản hồi</a>
-                                        <a data-idBinhLuanCha="{{$binhluan->Id_binhluan}}" style="cursor: pointer" class=" ml-3 text-success">Trả lời</a>
+                                        <a data-idBinhLuanCha="{{$binhluan->Id_binhluan}}" data-tencha="{{$binhluan->Ten}}" style="cursor: pointer" class="traloiBinhluan ml-3 text-success">Trả lời</a>
                                         <div data-replyBinhluanCha="{{$binhluan->Id_binhluan}}" class="ml-4">
 
                                         </div>
@@ -147,7 +147,7 @@
     <div class="replyContainer d-none p-1">
         <!-- Leave a comment -->
         <div class="d-flex justify-content-between align-items-center">
-            <span>
+            <span class="binhluanForWhat">
                 <h1>Bình luận:</h1>
             </span>
             <span class="replyContainer__close">X</span>
@@ -170,6 +170,7 @@
         <div class="notifyEmail mb-2 bg-danger text-white p-1 text-center d-none"></div>
 
         <input type="hidden" name="Idtin" value="{{$tin->Id_tin}}">
+        <input type="hidden" name="Binhluan_cha" >
 
         <h1 class="mb-5">Vui lòng nhập đúng mã bảo vệ</h1>
         <div class='mt-3'>

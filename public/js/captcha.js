@@ -14,6 +14,9 @@ let replyBinhluanList = Array.from(document.querySelectorAll('.replyBinhluan'));
 const replyContainerClose = document.querySelector('.replyContainer__close');
 const replyContainer = document.querySelector('.replyContainer');
 const showReplyContainerBtn = document.querySelector('.showReplyContainerBtn');
+let traloiBinhluanList = Array.from(document.querySelectorAll('.traloiBinhluan'));
+const binhluanChaInput = document.querySelector('input[name="Binhluan_cha"]');
+const binhluanForWhat = document.querySelector('.binhluanForWhat');
 
 const checkEmailAndContent = function () {
     let regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -89,6 +92,7 @@ const storeBinhLuan = async function () {
                 'Noidung': contentArea.value,
                 'Id_tin': idTinInput.value,
                 'Ten': tenInput.value,
+                'Binhluan_cha':binhluanChaInput.value
             };
             $.post('/api/binhluan', info, function (data, status) {
                 notifySuccess.innerHTML = data.message;
@@ -118,7 +122,7 @@ const replyBinhluan = function (e) {
                 </div>
                 <p>${item.Noidung}</p>
                 <a data-idBinhLuanCha="${item.Id_binhluan}" style="cursor: pointer" class="replyBinhluan text-primary">Xem phản hồi</a>
-                <a data-idBinhLuanCha="${item.Id_binhluan}" style="cursor: pointer" class="replyBinhluan ml-3 text-success">Trả lời</a>
+                <a data-idBinhLuanCha="${item.Id_binhluan}" data-tencha="${item.Ten}" style="cursor: pointer" class="traloiBinhluan ml-3 text-success">Trả lời</a>
                 <div data-replyBinhluanCha="${item.Id_binhluan}" class="ml-4">
                     
                 </div>
@@ -130,7 +134,19 @@ const replyBinhluan = function (e) {
         replyBinhluanList.forEach(item => {
             item.addEventListener('click', replyBinhluan);
         })
+        traloiBinhluanList = Array.from(document.querySelectorAll('.traloiBinhluan'));
+        traloiBinhluanList.forEach(item => {
+            item.addEventListener('click', traloibinhluan);
+        });
     })
+}
+
+const traloibinhluan = function (e) {
+    const id = e.target.dataset.idbinhluancha;
+    const name = e.target.dataset.tencha;
+    binhluanChaInput.value = id;
+    binhluanForWhat.innerHTML = `Phản hồi ${name}`;
+    replyContainer.classList.remove('d-none');
 }
 
 btnBinhLuan.addEventListener('click', storeBinhLuan);
@@ -139,4 +155,11 @@ replyBinhluanList.forEach(item => {
     item.addEventListener('click', replyBinhluan);
 });
 replyContainerClose.addEventListener('click', () => { replyContainer.classList.add('d-none') });
-showReplyContainerBtn.addEventListener('click', () => { replyContainer.classList.remove('d-none') });
+showReplyContainerBtn.addEventListener('click', () => {
+    binhluanChaInput.value = null;
+    binhluanForWhat.innerHTML = `Bình luận`;
+    replyContainer.classList.remove('d-none')
+});
+traloiBinhluanList.forEach(item => {
+    item.addEventListener('click', traloibinhluan);
+});

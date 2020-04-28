@@ -44,7 +44,8 @@ class BinhluanController extends Controller
             'Thoigian' => date('Y-m-d H:i:s'),
             'Noidung' => $data['Noidung'],
             'Trangthai' => 0,
-            'Id_tin' => $data['Id_tin']
+            'Id_tin' => $data['Id_tin'],
+            'Binhluan_cha' => $data['Binhluan_cha']
         ]);
         return response()->json(['message' => 'Bình luận thành công! Quản trị viên đang kiểm tra bình luận của bạn!'], 200, [], JSON_UNESCAPED_UNICODE);
     }
