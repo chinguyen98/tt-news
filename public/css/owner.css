@@ -35,6 +35,10 @@
     cursor: pointer;
 }
 
+.tinPagination{
+    user-select: none;
+}
+
 .tinPagination a{
     cursor: pointer;
 }

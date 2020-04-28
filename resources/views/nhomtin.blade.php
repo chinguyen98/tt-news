@@ -15,6 +15,9 @@
             </span>
         </div>
 
+        <input type="hidden" name="idNhomtin" value="{{$nhomtin->Id_nhomtin}}">
+        <img style="display: none" src="/images/nhomtinloader.gif" alt="">
+
         @include('inc.searchBar')
     </div>
 </div>
@@ -74,7 +77,7 @@
     <div class="container">
         <div class="row m-rl--1">
             <div class="col-md-12 p-rl-1">
-                <div class="row m-rl--1">
+                <div class="listTinForNhomtinContainer row m-rl--1">
                     @foreach($tins as $tin)
 
                     @if($loop->index==6)
@@ -89,7 +92,7 @@
 
                             <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
                                 <a href="/loaitin/{{$loaitin->Id_loaitin}}" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
-                                    {{$loaitin->Ten_loaitin}}
+                                    {{$tin->Ten_loaitin}}
                                 </a>
                                 <h1 class="how1-child2 m-t-14">
                                     <a href="/tin/{{$tin->Id_tin}}" class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
@@ -107,12 +110,14 @@
             </div>
             <div class="col-md-12 p-rl-1 my-5">
                 <!-- Begin pagination -->
+                <input type="hidden" name="maxPage" value="{{ceil(count($tins)/6)}}">
                 <nav class="tinPagination" aria-label="Page navigation example">
                     <ul class="pagination justify-content-center">
                         <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1">Trước</a>
+                            <a class="page-link tinPagination__truoc" tabindex="-1">Trước</a>
                         </li>
-                        <li class="page-item active"><a class="page-link">1</a></li>
+
+                        <li class="page-item active"><a data-idpage="1" class="page-link tinPagination__number">1</a></li>
 
                         @for ($i = 0; $i < ceil(count($tins)/6); $i++)
 
@@ -122,15 +127,25 @@
 
                         @else
 
-                        <li class="page-item"><a class="page-link">{{$i+1}}</a></li>
+                        <li class="page-item"><a data-idPage="{{$i+1}}" class="page-link tinPagination__number">{{$i+1}}</a></li>
 
                         @endif
 
                         @endfor
 
-                        <li class="page-item">
-                            <a class="page-link" href="#">Sau</a>
+                        @if(ceil(count($tins)/6)==1)
+
+                        <li class="page-item disabled">
+                            <a class="page-link tinPagination__sau">Sau</a>
                         </li>
+
+                        @else
+
+                        <li class="page-item">
+                            <a class="page-link tinPagination__sau text-primary">Sau</a>
+                        </li>
+
+                        @endif
                     </ul>
                 </nav>
                 <!-- End pagination -->
@@ -139,6 +154,6 @@
     </div>
 </section>
 
-<script src="/js/pagination"></script>
+<script src="/js/pagination.js"></script>
 
 @endsection

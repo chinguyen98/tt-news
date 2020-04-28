@@ -11,7 +11,7 @@ class TinController extends Controller
     public function show(Request $request, $id)
     {
         $page = $request->query('page') - 1;
-        $result = DB::select('SELECT tin.Id_tin, tin.Tieude, tin.Ngaydangtin, tin.Hinhdaidien, tin.Tacgia from nhomtin JOIN loaitin on nhomtin.Id_nhomtin=loaitin.Id_nhomtin JOIN tin on loaitin.Id_loaitin=tin.Id_loaitin where nhomtin.Id_nhomtin=? and tin.Trangthai=1 ORDER BY tin.Ngaydangtin DESC LIMIT ?, 6', [$id, $page * 6]);
-        return response()->json($result, 200, [], JSON_UNESCAPED_UNICODE);
+        $tins = DB::select('SELECT * FROM tin JOIN loaitin ON tin.Id_loaitin=loaitin.Id_loaitin JOIN nhomtin on loaitin.Id_nhomtin = nhomtin.Id_nhomtin WHERE nhomtin.Id_nhomtin=? and tin.Trangthai=1 and loaitin.Trangthai=1 and nhomtin.Trangthai = 1 ORDER BY tin.Ngaydangtin DESC limit ?,6', [$id, $page * 6]);
+        return response()->json($tins, 200, [], JSON_UNESCAPED_UNICODE);
     }
 }
