@@ -36,7 +36,9 @@ class HomeController extends Controller
 
         $nhomtin = Nhomtin::find($id);
 
-        return view('nhomtin')->with(['title' => $nhomtin->Ten_nhomtin, 'nhomtin' => $nhomtin, 'listnhomtin' => $listnhomtin, 'trendingList' => $trendingList]);
+        $tins = DB::select('SELECT * FROM tin JOIN loaitin ON tin.Id_loaitin=loaitin.Id_loaitin JOIN nhomtin on loaitin.Id_nhomtin = nhomtin.Id_nhomtin WHERE nhomtin.Id_nhomtin=? and tin.Trangthai=1 and loaitin.Trangthai=1 and nhomtin.Trangthai = 1 ORDER BY tin.Ngaydangtin DESC', [$id]);
+
+        return view('nhomtin')->with(['title' => $nhomtin->Ten_nhomtin, 'tins' => $tins, 'nhomtin' => $nhomtin, 'listnhomtin' => $listnhomtin, 'trendingList' => $trendingList]);
     }
 
     public function renderLoaiTin($id)

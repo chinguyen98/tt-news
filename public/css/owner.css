@@ -34,3 +34,7 @@
     color: red;
     cursor: pointer;
 }
+
+.tinPagination a{
+    cursor: pointer;
+}

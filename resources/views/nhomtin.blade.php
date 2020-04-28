@@ -75,13 +75,11 @@
         <div class="row m-rl--1">
             <div class="col-md-12 p-rl-1">
                 <div class="row m-rl--1">
-                    @foreach($nhomtin->listLoaiTin as $loaitin)
+                    @foreach($tins as $tin)
 
-                    @foreach($loaitin->listTin as $tin)
+                    @if($loop->index==6)
 
-                    @if($tin->Trangthai == 0)
-
-                    @continue
+                    @break
 
                     @else
 
@@ -105,12 +103,42 @@
                     @endif
 
                     @endforeach
-
-                    @endforeach
                 </div>
+            </div>
+            <div class="col-md-12 p-rl-1 my-5">
+                <!-- Begin pagination -->
+                <nav class="tinPagination" aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Trước</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link">1</a></li>
+
+                        @for ($i = 0; $i < ceil(count($tins)/6); $i++)
+
+                        @if($i==0)
+
+                        @continue
+
+                        @else
+
+                        <li class="page-item"><a class="page-link">{{$i+1}}</a></li>
+
+                        @endif
+
+                        @endfor
+
+                        <li class="page-item">
+                            <a class="page-link" href="#">Sau</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End pagination -->
             </div>
         </div>
     </div>
 </section>
+
+<script src="/js/pagination"></script>
 
 @endsection
