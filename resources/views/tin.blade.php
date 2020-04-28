@@ -24,6 +24,7 @@
         </div>
 
         @include('inc.searchBar')
+        
     </div>
 </div>
 
@@ -71,6 +72,7 @@
                             {!! $tin->Noidung !!}
                         </div>
                         <button class="showReplyContainerBtn btn btn-primary mt-3">Bình luận bài viết này.</button>
+                        <img class="loaderGif d-none" src="/images/loader.gif" alt="">
                         <div class="row mt-5">
                             <div class="col col-sm-12 col-md-8">
                                 <!-- Show BinhLuan -->
@@ -94,7 +96,7 @@
                                         <a data-idBinhLuanCha="{{$binhluan->Id_binhluan}}" style="cursor: pointer" class="replyBinhluan text-primary">Xem phản hồi</a>
                                         <a data-idBinhLuanCha="{{$binhluan->Id_binhluan}}" data-tencha="{{$binhluan->Ten}}" style="cursor: pointer" class="traloiBinhluan ml-3 text-success">Trả lời</a>
                                         <div data-replyBinhluanCha="{{$binhluan->Id_binhluan}}" class="ml-4">
-
+                                            
                                         </div>
                                         <hr>
                                     </div>

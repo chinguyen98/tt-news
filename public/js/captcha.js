@@ -111,6 +111,7 @@ const storeBinhLuan = async function () {
 
 const replyBinhluan = function (e) {
     const id = e.target.dataset.idbinhluancha;
+    document.querySelector(`[data-replyBinhluanCha="${id}"]`).innerHTML = '<img class="loaderGif" src="/images/loader.gif" alt="">';
     $.get(`/api/binhluancon/${id}`, function (data, status) {
         const exportHtml = data.length === 0 ? '<p class="mt-3 text-danger">Không có tin phản hồi!</p>' : data.map(item =>
             `
