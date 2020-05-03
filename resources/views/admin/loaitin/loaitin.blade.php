@@ -54,7 +54,7 @@
             <!-- #END# Exportable Table -->
         </div>
         <!-- JQuery DataTable Css -->
-<link href="plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
+{{-- <link href="plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
 <!-- JQuery DataTable Css -->
 <link href="plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
 <!-- Jquery DataTable Plugin Js -->
@@ -68,6 +68,6 @@
 <script src="plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
 <script src="plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
 <!-- Custom Js -->
-<script src="js/pages/tables/jquery-datatable.js"></script>
+<script src="js/pages/tables/jquery-datatable.js"></script> --}}
 </html>
 @endsection

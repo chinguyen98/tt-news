@@ -38,7 +38,7 @@
           </div>
           <div class="row clearfix">
             <div class="col-sm-3 form-control-label">
-              <label for="Tiêu đề">Tiêu đề</label>
+              <label for="Tieu đề">Tieu đề</label>
             </div>
             <div class="col-sm-9">
               <div class="form-group">
@@ -149,13 +149,11 @@
     </div>
   </div>
 </div>
-
+</body>
 <script>
   window.addEventListener('load', () => {
     document.querySelectorAll('.btn.dropdown-toggle.btn-default')[0].style.display = 'none';
   })
 </script>
-
-</body>
 </html>
 @endsection

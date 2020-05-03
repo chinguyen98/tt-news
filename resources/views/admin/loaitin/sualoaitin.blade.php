@@ -12,7 +12,7 @@
   <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 center-block" style="float:none">
     <div class="card">
       <div class="header">
-        <h2> Cập nhập LoạiTin</h2>
+        <h2> Cập nhập Loại Tin</h2>
           @include('error.note')
         <ul class="header-dropdown m-r--5">
         </ul>
@@ -26,10 +26,10 @@
   
       <div class="row clearfix">
             <div class="col-sm-3 form-control-label">
-              <label for="Ten_KhongDau" >Tên_nhomtin</label>
+              <label for="Ten_KhongDau" >Tên nhóm tin</label>
             </div>
             <div class="col-sm-9">
-           <select name="Id_nhomtin" >
+           <select name="Id_nhomtin"  >
            @foreach( $group as $gr)
               <option @if($dr->Id_nhomtin==$gr->Id_nhomtin)
                           {{'selected'}}
@@ -44,7 +44,7 @@
         
           <div class="row clearfix">
             <div class="col-sm-3 form-control-label">
-              <label for="Ten_KhongDau" >Tên_loạitin</label>
+              <label for="Ten_KhongDau" >Tên loại tin</label>
             </div>
             <div class="col-sm-9">
               <div class="form-group">
@@ -82,4 +82,9 @@
 </div>
 </body>
 </html>
+<script>
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.btn.dropdown-toggle.btn-default')[0].style.display = 'none';
+  })
+</script>
 @endsection
