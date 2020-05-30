@@ -17,9 +17,14 @@
 
 <!-- Page heading -->
 <div class="container p-t-4 p-b-40">
-    <h2 class="f1-l-1 cl2">
-        Kết quả tìm kiếm: {{$searchKey}}
-    </h2>
+    <div class="row">
+        <div class="col col-md-12 d-block">
+            <h2 class="f1-l-1 cl2 " style="overflow: auto">
+                <span>Kết quả tìm kiếm:</span>
+                <span style="overflow: auto" class="ml-3">{{$searchKey}}</span>
+            </h2>
+        </div>
+    </div>
 </div>
 
 <!-- Post -->

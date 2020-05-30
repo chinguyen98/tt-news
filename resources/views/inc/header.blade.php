@@ -4,12 +4,13 @@
         <div class="topbar">
             <div class="content-topbar container h-100">
                 <div class="left-topbar">
-                    <a href=/about class="left-topbar-item">
-                        Về chúng tôi
-                    </a>
+
                 </div>
 
                 <div class="right-topbar">
+                    <a href=/about class="left-topbar-item" style="font-size: 1.5rem; font-weight: bolder; text-transform: capitalize">
+                        <i>Về chúng tôi</i>
+                    </a>
                     <a href="https://www.facebook.com/groups/506105220057506/">
                         <span class="fab fa-facebook"></span>
                     </a>
@@ -40,7 +41,7 @@
             <ul class="topbar-mobile">
                 <li class="left-topbar">
                     <span class="left-topbar-item flex-wr-s-c">
-                        <a href="#" class="left-topbar-item">
+                        <a href="/about" class="left-topbar-item">
                             Về chúng tôi
                         </a>
                     </span>
@@ -89,13 +90,13 @@
                         <img src="images/icons/logo-01.png" alt="LOGO">
                     </a>
 
-                    
+
 
                     <ul class="main-menu">
                         <li class="mega-menu-item">
                             <a href="/">Trang chủ</a>
                         </li>
-                        
+
                         @foreach($listnhomtin as $nhomtin)
                         <li class="mega-menu-item">
                             <a href="/nhomtin/{{$nhomtin->Id_nhomtin}}">{{$nhomtin->Ten_nhomtin}}</a>

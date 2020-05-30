@@ -21,6 +21,24 @@
 
 <div class="row slider-text justify-content-center align-items-center">
     <div class="col-md-9 col-sm-12 text-center ftco-animate">
+        <p class="intro-cd">Thông Tin Thành Viên</p>
+    </div>
+</div>
+<div class="row slider-text justify-content-center align-items-center mb-5">
+    <div class="col-md-9 col-sm-12 text-center ftco-animate">
+        <ul style="font-size: 1.2rem">
+            <li class="mb-1">Nguyễn Đắc Chí - DH51601700</li>
+            <li class="mb-1">Lê Văn Hiểu - DH51601561</li>
+            <li class="mb-1">Trần Thanh Hiếu - DH51601158</li>
+            <li class="mb-1">Đặng Tấn Đạt - DH51601489</li>
+            <li class="mb-1">Phạm Ngọc Thạch - DH51601233</li>
+            <li class="mb-1">Lê Hoàng Tân - DH51601296</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row slider-text justify-content-center align-items-center">
+    <div class="col-md-9 col-sm-12 text-center ftco-animate">
         <p class="intro-cd">Đôi Nét Về Website Tin Tức Trực Tuyến</p>
     </div>
 </div>

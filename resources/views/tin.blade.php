@@ -21,6 +21,7 @@
             <span class="breadcrumb-item f1-s-3 cl9">
                 {{$tin->Tieude}}
             </span>
+            <input type="hidden" name="Idtin" value="{{$tin->Id_tin}}">
         </div>
 
         @include('inc.searchBar')
@@ -171,7 +172,7 @@
         <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="email" placeholder="abc@gmail.com">
         <div class="notifyEmail mb-2 bg-danger text-white p-1 text-center d-none"></div>
 
-        <input type="hidden" name="Idtin" value="{{$tin->Id_tin}}">
+        
         <input type="hidden" name="Binhluan_cha" >
 
         <h1 class="mb-5">Vui lòng nhập đúng mã bảo vệ</h1>

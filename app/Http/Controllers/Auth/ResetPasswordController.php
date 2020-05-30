@@ -57,7 +57,7 @@ class ResetPasswordController extends Controller
       $mkcu=$requests->password_cu; 
       if(Hash::check($mkcu,Auth::user()->password))
       {
-         $reset=DB::table('Admin')->where('id',Auth::id())->update(['password'=>$mkmoi]);
+         $reset=DB::table('admin')->where('id',Auth::id())->update(['password'=>$mkmoi]);
             return redirect('admin/logout');
       }
       else
